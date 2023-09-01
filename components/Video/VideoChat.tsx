@@ -13,9 +13,7 @@ const VideoChat: React.FC<VideoChatProps> = () => {
     if (myVideo.current && stream) {
       myVideo.current.srcObject = stream;
     }
-    if (userVideo.current && stream) {
-      userVideo.current.srcObject = stream;
-    }
+   
      // Clear the video elements when the call ends
      if (callEnded) {
       if (myVideo.current) {
