@@ -114,6 +114,11 @@ export default function ContextProvider({
 
     connectionRef.current!.destroy();
 
+    if (stream) {
+      stream.getTracks().forEach((track) => {
+        track.stop();
+      });
+    }
     window.location.reload();
   };
 
