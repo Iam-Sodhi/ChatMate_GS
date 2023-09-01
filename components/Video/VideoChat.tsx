@@ -13,11 +13,24 @@ const VideoChat: React.FC<VideoChatProps> = () => {
     if (myVideo.current && stream) {
       myVideo.current.srcObject = stream;
     }
-  }, [stream, myVideo]);
+    if (userVideo.current && stream) {
+      userVideo.current.srcObject = stream;
+    }
+     // Clear the video elements when the call ends
+     if (callEnded) {
+      if (myVideo.current) {
+        myVideo.current.srcObject = null;
+      }
+      if (userVideo.current) {
+        userVideo.current.srcObject = null;
+      }
+    }
+    
+  }, [stream, myVideo,userVideo,callEnded]);
 
   return (
    <> <Grid container className="">
-    {stream &&  (
+    {stream && !callEnded  && (
       <Paper className="">
         <Grid item xs={12} md={6}>
           <Typography variant="h5" gutterBottom>{name || 'Name'}</Typography>
@@ -28,7 +41,7 @@ const VideoChat: React.FC<VideoChatProps> = () => {
     {callAccepted && !callEnded &&  (
       <Paper className="">
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" gutterBottom>{call.name || 'Name'}</Typography>
+          <Typography variant="h5" gutterBottom>{call.from === me ? 'You' : call.name}</Typography>
           <video playsInline ref={userVideo} autoPlay className="w-[500px] h-[500px] "/>
         </Grid>
       </Paper>
@@ -63,7 +76,7 @@ const VideoChat: React.FC<VideoChatProps> = () => {
           {callAccepted && !callEnded ? (
             <p className="w-full text-lg cursor-pointer bg-gray-400" onClick={leaveCall}><PhoneDisabled/> Hang up </p>
           ) : (
-            <p className="w-full text-lg cursor-pointer bg-gray-400" onClick={()=>callUser(idToCall)}><Phone /> Call </p>
+            <p className="w-full text-lg cursor-pointer bg-gray-400" onClick={()=>callUser(idToCall, name)}><Phone /> Call </p>
           )}
         </div>
       </form>

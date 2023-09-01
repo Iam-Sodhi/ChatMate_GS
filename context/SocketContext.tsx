@@ -13,7 +13,7 @@ interface SocketContextType {
   setName: React.Dispatch<React.SetStateAction<string>>; // Add the 'setName' property with correct type
   callEnded: boolean;
   me: string;
-  callUser: (id: string) => void; // Add the 'callUser' property with correct type
+  callUser: (id: string,callerName: string) => void; // Add the 'callUser' property with correct type
   leaveCall: () => void;
   answerCall: () => void;
 }
@@ -83,7 +83,7 @@ export default function ContextProvider({
     connectionRef.current = peer;
   };
 
-  const callUser = (id: string) => {
+  const callUser = (id: string, callerName: string) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
 
     peer.on("signal", (data) => {
@@ -91,7 +91,7 @@ export default function ContextProvider({
         userToCall: id,
         signalData: data,
         from: me,
-        name,
+        name: callerName,
       });
     });
 
