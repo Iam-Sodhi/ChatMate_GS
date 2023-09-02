@@ -12,6 +12,13 @@ body {
   border-width: 0;
 }
 
+.smallFrame {
+  @apply fixed top-[20x] left-[20px] h-[170px] w-[300px] bg-white rounded-md border-2 border-purple-600 shadow-lg z-50;
+}
+.controlContainer{
+  @apply  bg-purple-400 bg-opacity-90 p-1 rounded-full flex justify-center items-center cursor-pointer
+}
+
 @keyframes scale-up {
   0% {
     transform: scale(0.5);
