@@ -21,11 +21,11 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
   
   return (
     <section className="bg-gray-900 h-screen flex justify-center items-center">
-      <div className="w-100 max-w-lg rounded-lg bg-gray-800 p-4">
+      <div className="w-96 max-w-lg rounded-lg bg-gray-800 p-4">
         <div className="bg-gray-300 rounded-t-lg p-4 text-center text-2xl font-semibold">
           <p>👋 Make a call</p>
         </div>
-        <div className="p-4">
+        <div className="p-4 w-">
           <form
             id="join-form"
             action=""
@@ -58,7 +58,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
                 name="Call"
                 id="Call"
                 value={idToCall}
-                placeholder="Put the ID of "
+                placeholder="Put Receiver's ID"
                 onChange={(e) => setIdToCall(e.target.value)}
                 className="w-full bg-gray-700 text-white rounded-md p-2 focus:outline-none"
               />
@@ -71,7 +71,6 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
           </form>
         </div>
       </div>
-      
       <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4">
   {!ignored && call.isReceivingCall && !callAccepted && (
     <div className="bg-gray-900 p-4 rounded-lg shadow-lg text-white">
