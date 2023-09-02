@@ -7,7 +7,7 @@ export default function Video(){
        <>
 
        {/* <Lobby /> */}
-       * <ContextProvider> 
+        <ContextProvider> 
 
        <VideoChat1 /> 
         </ContextProvider> 

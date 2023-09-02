@@ -12,6 +12,8 @@ interface SocketContextType {
   name: string; // Add the 'name' property with correct type
   setName: React.Dispatch<React.SetStateAction<string>>; // Add the 'setName' property with correct type
   callEnded: boolean;
+  globalCallEnded: boolean;
+  callInitiated: boolean;
   me: string;
   callUser: (id: string,callerName: string) => void; // Add the 'callUser' property with correct type
   leaveCall: () => void;
@@ -32,16 +34,31 @@ export default function ContextProvider({
   const userVideo = useRef<HTMLVideoElement | null>(null);
   const connectionRef = useRef<Peer.Instance | null>(null);
   const [call, setCall] = useState<any>({});
+  
+  const [callInitiated, setCallInitiated] = useState(false);
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
+  const [globalCallEnded, setGlobalCallEnded] = useState(false); // Add globalCallEnded state
+
   const [name, setName] = useState("");
 
+   const constraints={
+    video:{
+      width:{
+        min:640 , ideal:1920, max:1920
+      },
+      height:{
+        min:480 , ideal:1080, max:1080
+      },
+    },
+    audio:true
+   }
   const socket = useMemo(()=>io('https://chatmate-oszk.onrender.com'),[]) // here put the url of deployed server when deployed
   useEffect(() => {
 
       const setVideoStream=async()=>{
         try{
-         const currentStream=await navigator.mediaDevices.getUserMedia({video: true, audio: true })
+         const currentStream=await navigator.mediaDevices.getUserMedia(constraints);
          setStream(currentStream);
          if(myVideo.current){
           myVideo.current.srcObject = currentStream;
@@ -56,11 +73,12 @@ export default function ContextProvider({
           console.log("Error accesing camera ",error);
         }
       }
-
+      socket.on("callEnded", () => {
+        setGlobalCallEnded(true); // Set globalCallEnded to true when a call is ended
+      });
       setVideoStream();
-     
   
-  }, []);
+  }, [socket]);
 
   const answerCall = () => {
     setCallAccepted(true);
@@ -93,6 +111,7 @@ export default function ContextProvider({
         from: me,
         name: callerName,
       });
+      connectionRef.current = peer;
     });
 
     peer.on("stream", (currentStream) => {
@@ -102,9 +121,10 @@ export default function ContextProvider({
 
     socket.on("callAccepted", (signal) => {
       setCallAccepted(true);
-
+      setCallInitiated(false);
       peer.signal(signal);
     });
+    setCallInitiated(true);
 
     connectionRef.current = peer;
   };
@@ -112,7 +132,10 @@ export default function ContextProvider({
   const leaveCall = () => {
     setCallEnded(true);
 
-    connectionRef.current!.destroy();
+    if (connectionRef.current) { // Check if connectionRef.current is not null
+      connectionRef.current.destroy(); // Call destroy only if connectionRef.current is not null
+      connectionRef.current = null; // Set connectionRef.current to null after destroying
+    }
 
     if (stream) {
       stream.getTracks().forEach((track) => {
@@ -133,10 +156,12 @@ export default function ContextProvider({
         name,
         setName,
         callEnded,
+        globalCallEnded,
         me,
         callUser,
         leaveCall,
         answerCall,
+        callInitiated,
       }}
     >
       {children}
