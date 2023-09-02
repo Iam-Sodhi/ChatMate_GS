@@ -65,6 +65,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
               <Phone
                 className="ml-2 h-9 w-12 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition duration-300"
                 onClick={() => callUser(idToCall, name)}
+                
               />
             </div>
           </form>
