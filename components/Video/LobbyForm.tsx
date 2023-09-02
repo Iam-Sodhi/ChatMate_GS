@@ -53,7 +53,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
                 </span>
               </CopyToClipboard>
             </div>
-            <div className="flex ">
+            <div className="flex  ">
               <input
                 name="Call"
                 id="Call"
@@ -63,7 +63,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
                 className="w-full bg-gray-700 text-white rounded-md p-2 focus:outline-none"
               />
               <Phone
-                className="ml-2 h-9 w-12 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition duration-300"
+                className="ml-2 h-[40px] w-12 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition duration-300"
                 onClick={() => callUser(idToCall, name)}
                 
               />
