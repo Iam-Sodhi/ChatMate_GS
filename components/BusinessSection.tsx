@@ -1,71 +1,42 @@
-import React from 'react';
+"use client"
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
 
-type BusinessSectionProps = {
-    
+type BusinessSectionProps = {};
+
+const BusinessSection: React.FC<BusinessSectionProps> = () => {
+  const router=useRouter();
+  return (
+    <section id="businessSection" className="section bg-pink bg-opacity-50">
+      <div className="container mx-auto max-w-[1160px]">
+        <div className="flex justify-between items-center ">
+          <div className="left mr-[10px]  ">
+            <Image alt="businees image" src="/business.jpg" height={1392} width={2022} className="mt-11 -ml-[200px] inline-block max-w-full " />
+          </div>
+          <div className="right min-w-[400px] max-w-[440px]">
+            <h1 className="mt-5 mb-3  text-[45px] leading-[120%] font-poppins ">Perfect Solution for Small Businesses</h1>
+            <p className="mb-4 text-[18px] text-gray-200  font-poppins"> Pricing plans that fit like a glove.</p>
+            <button
+              className="md:inline-block block text-white font-medium sm:font-semibold 
+            text-[12px] sm:text-[18px] hover:opacity-80  border-solid border-white text-center align-middle bg-secondary3 box-border px-[20x] py-[10px] sm:px-[28px] sm:py-[15px] sm:mr-[20px] max-w-[200px] sm:max-w-none border-[1.5px] leading-[117.02%] "
+            >
+              Start a Chat
+            </button>
+            <button
+              onClick={() => router.push("/video")}
+              className="md:inline-block block text-center mt-[12px] md:mt-0 align-middle text-secondary3 border-solid text-[12px] sm:text-[18px] hover:bg-[#d8913b]/20 border-[2.5px] px-[12px] py-[10px] sm:px-[28px] sm:py-[13px] bg-transparent max-w-[200px] sm:max-w-none border-secondary3 leading-[117.02%] font-medium sm:font-semibold  ="
+            >
+              Make Video Call
+            </button>
+
+            <div className="mt-11 mb-7 max-w-[157px] h-[1px] bg-dimgray "> </div>
+            <Image alt="star image" src="/star.svg"  height={114} width={19} quality={60} className="mr-12 " />
+            <p className="-mt-[7px] text-[18px] text-gray-200 leading-[181%] font-poppins "><span className="font-bold" >3 million calls </span>completed with a 96.8% 5 star rating.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
-
-const BusinessSection:React.FC<BusinessSectionProps> = () => {
-    
-    return    <div className="absolute top-[148rem] left-[0rem] w-[90rem] h-[59.25rem] text-left text-[1.13rem] text-secondary3 font-poppins">
-    <div className="absolute top-[0rem] left-[0rem] bg-pink w-[90rem] h-[59.25rem]" />
-    <div className="absolute top-[38.28rem] left-[54.28rem] box-border w-[9.88rem] h-[0.06rem] border-t-[1px] border-solid border-dimgray" />
-    <div className="absolute top-[41.06rem] left-[54rem] w-[7.13rem] h-[1.19rem]">
-      <img
-        className="absolute top-[0rem] left-[0rem] w-[1.19rem] h-[1.19rem] object-cover"
-        alt=""
-        src="/star-1-1@2x.png"
-      />
-      <img
-        className="absolute top-[0rem] left-[1.44rem] w-[1.19rem] h-[1.19rem] object-cover"
-        alt=""
-        src="/star-1-1@2x.png"
-      />
-      <img
-        className="absolute top-[0rem] left-[4.5rem] w-[1.19rem] h-[1.19rem] object-cover"
-        alt=""
-        src="/star-1-1@2x.png"
-      />
-      <img
-        className="absolute top-[0rem] left-[2.88rem] w-[1.19rem] h-[1.19rem] object-cover"
-        alt=""
-        src="/star-1-1@2x.png"
-      />
-      <img
-        className="absolute top-[0rem] left-[5.94rem] w-[1.19rem] h-[1.19rem] object-cover"
-        alt=""
-        src="/star-1-1@2x.png"
-      />
-    </div>
-    <div className="absolute top-[32.44rem] left-[65.06rem] w-[10.13rem] h-[2.88rem] font-roboto">
-      <div className="absolute top-[0rem] left-[0rem] box-border w-[10.13rem] h-[2.88rem] border-[2.5px] border-solid border-secondary3" />
-      <div className="absolute top-[calc(50%_-_11px)] left-[calc(50%_-_47px)] leading-[117.02%] font-semibold">
-        Get a demo
-      </div>
-    </div>
-    <div className="absolute top-[32.44rem] left-[54rem] w-[10.13rem] h-[2.88rem] text-white font-roboto">
-      <div className="absolute top-[0rem] left-[0rem] bg-secondary3 box-border w-[10.13rem] h-[2.94rem] border-[1.5px] border-solid border-white" />
-      <div className="absolute top-[calc(50%_-_11px)] left-[calc(50%_-_53px)] leading-[117.02%] font-semibold">
-        Try it for free
-      </div>
-    </div>
-    <div className="absolute top-[11.81rem] left-[53.75rem] text-[3.5rem] leading-[123.52%] font-medium text-primary3 inline-block w-[27.5rem]">
-      Perfect Solution for Small Businesses
-    </div>
-    <div className="absolute top-[27.56rem] left-[53.75rem] leading-[181.02%] text-gray-200 text-center inline-block w-[19.13rem]">
-      Pricing plans that fit like a glove.
-    </div>
-    <div className="absolute top-[40.25rem] left-[64rem] leading-[181.02%] text-center inline-block w-[17.13rem] text-gray-100">
-      <span className="font-medium">3 million calls</span>
-      <span className="text-gray-200">
-        {" "}
-        completed with a 96.8% 5 star rating
-      </span>
-    </div>
-    <img
-      className="absolute top-[8.63rem] left-[0rem] w-[46.44rem] h-[36.81rem]"
-      alt=""
-      src="/group-5.svg"
-    />
-  </div>
-}
 export default BusinessSection;

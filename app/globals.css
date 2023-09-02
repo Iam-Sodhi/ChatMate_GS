@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
 @tailwind base;
+.section{
+  @apply py-[140px] px-[60px] bg-primary2
+}
 @tailwind components;
 @tailwind utilities;
 body {

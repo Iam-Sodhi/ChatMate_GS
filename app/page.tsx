@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main >
         <div
-      className="relative bg-peachpuff w-full  overflow-hidden   "
+      className="relative  w-full  overflow-hidden   "
     >  
       <HeroSection />
       <About />

@@ -23,6 +23,7 @@ const config: Config = {
         sienna: "rgba(206, 104, 71, 0.4)",
         peru: "rgba(216, 145, 59, 0.5)",
         peachpuff: "#f3cfbb",
+        color:"rgba(230, 189, 182, .5)"
       },
       fontFamily: {
         poppins: "Poppins",
