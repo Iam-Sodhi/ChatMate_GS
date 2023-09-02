@@ -17,11 +17,11 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
   };
   const handleIgnore = () => {
     setIgnored(true);
-  };
+  }
   
   return (
-    <section className="bg-gray-900 h-screen flex justify-center items-center">
-      <div className="w-fit h-fit rounded-lg bg-gray-800 p-4">
+    <div className="bg-gray-900 h-screen flex justify-center items-center">
+      <div className="max-w-lg rounded-lg bg-gray-800 p-4">
         <div className="bg-gray-300 rounded-t-lg p-4 text-center text-2xl font-semibold">
           <p>👋 Make a call</p>
         </div>
@@ -95,7 +95,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
 </div>
 
 
-    </section>
+    </div>
   );
 };
 export default LobbyForm;
