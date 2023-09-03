@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = () => {
           <motion.div className="ml-0 mr-7 md:mr-5 max-w-[130px] md:max-w-none footerColumn"
            initial={{ opacity: 0.5, x: -100 }}
            whileInView={{ opacity: 1, x: 0 }}
-           transition={{ duration:1 }}
+           transition={{ duration:0.6 }}
            viewport={{once: true}}>
             <Image
               src="/chatMate.svg"

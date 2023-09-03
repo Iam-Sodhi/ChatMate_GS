@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ ContactPage }) => {
               {!ContactPage && (
                 <li className="hidden sm:flex bg-secondary1 h-10 w-[1.5px] "></li>
               )}
-              <li className="bg-secondary3 box-border rounded-sm text-center align-middle text-[14px]  sm:text-[16px]  text-white border-[1px] border-solid  py-2 sm:py-[10px] px-3 sm:px-4 border-white hover:opacity-80 sm:-mr-5 cursor-pointer">
+              <li className="bg-secondary3 box-border rounded-sm text-center align-middle text-[14px]  sm:text-[16px]  text-white border-[1px] border-solid  py-2 sm:py-[10px] px-3 sm:px-4 border-white hover:bg-secondary1 sm:-mr-5 cursor-pointer">
                 Log In
               </li>
             </ul>
