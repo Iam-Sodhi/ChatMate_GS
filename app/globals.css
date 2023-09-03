@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
-@tailwind base;
 .section{
-  @apply py-[140px] px-[60px] bg-primary2
+  @apply  p-[30px] sm:px-[90px] sm:py-[60px] md:py-[140px] md:px-[60px] 
 }
+.footerColumn{
+  @apply flex flex-col items-start object-fill justify-start h-[180px] sm:h-auto gap-x-[10px] gap-y-[10px] mr-7 md:mx-5 sm:mx-[15px] md:w-[16.66%] 
+}
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 body {

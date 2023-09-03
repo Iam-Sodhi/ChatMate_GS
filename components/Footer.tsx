@@ -1,78 +1,101 @@
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
-type FooterProps = {
-    
+type FooterProps = {};
+
+const Footer: React.FC<FooterProps> = () => {
+  return (
+    <section className="section pb-[30px] bg-primary2">
+      <div className="mx-auto max-w-[1160px] ">
+        <div className="flex justify-start flex-wrap object-fill  md:flex-nowrap md:justify-between items-start">
+          <div className="ml-0 mr-7 md:mr-5 max-w-[130px] md:max-w-none footerColumn">
+            <Image
+              src="/chatMate.svg"
+              alt="logo"
+              width={120}
+              height={19}
+              className="mt-6"
+            />
+            <p className="mt-3 md:mt-10 min-w-[135px] md:min-w-[190px] font-poppins text-[15px] leading-[160%] text-gray-200 ">
+              Chat your way to the better day.
+            </p>
+          </div>
+          <div className="footerColumn hidden md:flex"></div>
+          <div className="footerColumn">
+            <h1 className="mt-5 mb-[10px] font-poppins text-[18px] font-medium ">
+              Help
+            </h1>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              Support
+            </p>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              KnowledgeBase
+            </p>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              Tutorials
+            </p>
+          </div>
+          <div className="footerColumn">
+            <h1 className="mt-5 mb-[10px] font-poppins text-[18px] font-medium ">
+              Features
+            </h1>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              Screen Sharing
+            </p>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              IOS & Android apps
+            </p>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              File Sharing
+            </p>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              User Management
+            </p>
+          </div>
+          <div className="footerColumn min-w-[120px] ">
+            <h1 className="mt-5 mb-[10px] font-poppins text-[18px] font-medium ">
+              Company
+            </h1>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              About Us
+            </p>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              Careers
+            </p>
+            <p className="font-poppins font-normal text-[13px] text-gray-200 ">
+              Services
+            </p>
+          </div>
+          <div className="footerColumn ml-0 md:ml-[15px] mr-0 mt-5 md:mt-0">
+            <h1 className="md:mt-5 mb-[10px] font-poppins text-[18px] font-medium ">
+              Contact Us
+            </h1>
+            <a
+              href="mailto:chatmate@gmail.com"
+              className="font-poppins font-normal text-[13px] text-gray-200 hover:text-secondary3 "
+            >
+              chatmate@gmail.com
+            </a>
+            <a
+              href="tel:1-800-101-202"
+              className="font-poppins font-normal text-[13px] text-gray-200 hover:text-secondary3"
+            >
+              1-800-101-202
+            </a>
+            <a
+              href="https://www.google.com/maps/place/Gurdaspur,+Punjab+143521/@32.042692,75.3878159,14z/data=!3m1!4b1!4m6!3m5!1s0x391b926db4af6e6d:0x2fda9aabada0f98b!8m2!3d32.0413917!4d75.403086!16s%2Fg%2F11bc6lv3z9?entry=ttu"
+              className="font-poppins font-normal text-[13px] text-gray-200 hover:text-secondary3"
+            >
+              Gurdaspur, Punjab
+            </a>
+          </div>
+        </div>
+
+        <p className="mt-[30px] text-[11px] sm:mt-[120px] font-poppins font-normal text-gray-200 sm:text-[12px] ">
+          ©Copyright ChatMate Inc.
+        </p>
+      </div>
+    </section>
+  );
 };
-
-const Footer:React.FC<FooterProps> = () => {
-    
-    return  <div className="absolute top-[207.25rem] left-[0rem] w-[90rem] h-[39.44rem] text-left text-[1.13rem] text-gray-200 font-poppins">
-    <div className="absolute top-[35.75rem] left-[8.94rem] leading-[160.02%] inline-block w-[14.94rem]">
-      ©Copyright ChatMate Inc.
-    </div>
-    <div className="absolute top-[0rem] left-[0rem] bg-primary2 w-[90rem] h-[39.44rem]" />
-    <div className="absolute top-[8.31rem] left-[8.94rem] w-[73.13rem] h-[17.19rem] text-[1rem]">
-      <div className="absolute top-[0rem] left-[0rem] text-[1.5rem] leading-[117.02%] text-secondary1">
-        <b>
-          Cha
-          <span className="tracking-[0.06em]">t</span>
-        </b>
-        <span className="font-extralight">Mate</span>
-      </div>
-      <div className="absolute top-[0.31rem] left-[24.38rem] text-[1.13rem] leading-[160.02%] font-medium text-gray-100 inline-block w-[11.06rem]">
-        Help
-      </div>
-      <div className="absolute top-[0.31rem] left-[36.69rem] text-[1.13rem] leading-[160.02%] font-medium text-gray-100 inline-block w-[11.06rem]">
-        Features
-      </div>
-      <div className="absolute top-[0.31rem] left-[49rem] text-[1.13rem] leading-[160.02%] font-medium text-gray-100 inline-block w-[11.06rem]">
-        Company
-      </div>
-      <div className="absolute top-[0.31rem] left-[61.31rem] text-[1.13rem] leading-[160.02%] font-medium text-gray-100 inline-block w-[11.06rem]">
-        Contact Us
-      </div>
-      <div className="absolute top-[3.56rem] left-[24.38rem] leading-[160.02%] inline-block w-[11.06rem]">
-        Support
-      </div>
-      <div className="absolute top-[3.56rem] left-[36.69rem] leading-[160.02%] inline-block w-[11.06rem]">
-        Screen Sharing
-      </div>
-      <div className="absolute top-[3.56rem] left-[49rem] leading-[160.02%] inline-block w-[11.06rem]">
-        About Us
-      </div>
-      <div className="absolute top-[3.56rem] left-[61.31rem] leading-[160.02%] inline-block w-[11.81rem]">
-        info@chatmate.com
-      </div>
-      <div className="absolute top-[7.56rem] left-[24.38rem] leading-[160.02%] inline-block w-[11.06rem]">
-        Knowledgebase
-      </div>
-      <div className="absolute top-[7.56rem] left-[36.69rem] leading-[160.02%] inline-block w-[9.69rem]">{`IOS & Android Apps`}</div>
-      <div className="absolute top-[7.56rem] left-[49rem] leading-[160.02%] inline-block w-[11.06rem]">
-        Careers
-      </div>
-      <div className="absolute top-[7.56rem] left-[61.69rem] leading-[160.02%] inline-block w-[11.06rem]">
-        1-800-101-202
-      </div>
-      <div className="absolute top-[11.56rem] left-[24.38rem] leading-[160.02%] inline-block w-[11.06rem]">
-        Tutorials
-      </div>
-      <div className="absolute top-[11.56rem] left-[36.69rem] leading-[160.02%] inline-block w-[11.06rem]">
-        File Sharing
-      </div>
-      <div className="absolute top-[15.56rem] left-[36.69rem] leading-[160.02%] inline-block w-[11.06rem]">
-        User Management
-      </div>
-      <div className="absolute top-[11.56rem] left-[49rem] leading-[160.02%] inline-block w-[11.06rem]">
-        Contact Us
-      </div>
-      <div className="absolute top-[11.56rem] left-[61.69rem] leading-[160.02%] inline-block w-[11.06rem]">
-        <p className="m-0">3500 Deer Creek</p>
-        <p className="m-0">road, CA</p>
-      </div>
-      <div className="absolute top-[3.56rem] left-[0rem] text-[1.13rem] leading-[160.02%] inline-block w-[11.88rem]">
-        Chat your way to the better day.
-      </div>
-    </div>
-  </div>
-}
 export default Footer;
