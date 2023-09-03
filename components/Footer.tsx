@@ -1,6 +1,7 @@
+"use client"
 import Image from "next/image";
 import React from "react";
-
+import {motion} from "framer-motion"
 type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = () => {
@@ -8,7 +9,11 @@ const Footer: React.FC<FooterProps> = () => {
     <section className="section pb-[30px] bg-primary2">
       <div className="mx-auto max-w-[1160px] ">
         <div className="flex justify-start flex-wrap object-fill  md:flex-nowrap md:justify-between items-start">
-          <div className="ml-0 mr-7 md:mr-5 max-w-[130px] md:max-w-none footerColumn">
+          <motion.div className="ml-0 mr-7 md:mr-5 max-w-[130px] md:max-w-none footerColumn"
+           initial={{ opacity: 0.5, x: -100 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           transition={{ duration:1 }}
+           viewport={{once: true}}>
             <Image
               src="/chatMate.svg"
               alt="logo"
@@ -19,7 +24,7 @@ const Footer: React.FC<FooterProps> = () => {
             <p className="mt-3 md:mt-10 min-w-[135px] md:min-w-[190px] font-poppins text-[15px] leading-[160%] text-gray-200 ">
               Chat your way to the better day.
             </p>
-          </div>
+          </motion.div>
           <div className="footerColumn hidden md:flex"></div>
           <div className="footerColumn">
             <h1 className="mt-5 mb-[10px] font-poppins text-[18px] font-medium ">

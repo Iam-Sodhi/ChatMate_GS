@@ -16,10 +16,12 @@ const About: React.FC<AboutProps> = () => {
   return (
     <section id="about" className="section bg-primary2 ">
       <div className="container mx-auto max-w-[1160px] text-center "
-      > <motion.div
+      > 
+      <motion.div
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.05 }}>
+      transition={{ delay: 0.05 }}
+      viewport={{once: true}}>
 
            <h5 className="py-3 mb-2 text-[30px] sm:text-[45px] font-normal font-poppins ">
             Instant Peer to Peer Call
