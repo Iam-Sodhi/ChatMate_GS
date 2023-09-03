@@ -1,12 +1,15 @@
 import Link from "next/link";
 import React from "react";
-
+import {motion} from "framer-motion"
 type NavbarProps = {};
 
 const Navbar: React.FC<NavbarProps> = () => {
   return (
-    <section className=" bg-peachpuff ">
-      <div className="mx-auto pt-5 mb-100px  max-w-[1160px] md:px-[60px] px-[30px] text-secondary1 font-poppins">
+    <motion.section className=" bg-peachpuff "
+    >
+      <motion.div className="mx-auto pt-5 mb-100px  max-w-[1160px] md:px-[60px] px-[30px] text-secondary1 font-poppins"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0,  opacity: 1 }}>
 
       <div className=" flex justify-between items-center container ">
         <Link href="/"> 
@@ -31,8 +34,8 @@ const Navbar: React.FC<NavbarProps> = () => {
           </ul>
         </nav>
       </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 export default Navbar;
