@@ -9,7 +9,7 @@ const Navbar: React.FC<NavbarProps> = ({ ContactPage }) => {
   return (
     <motion.section className=" bg-peachpuff ">
       <motion.div
-        className="mx-auto pt-5 mb-100px  max-w-[1160px] md:px-[60px] px-[30px] text-secondary1 font-poppins"
+        className="mx-auto pt-5 mb-100px  max-w-[1160px]  text-secondary1 font-poppins"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >

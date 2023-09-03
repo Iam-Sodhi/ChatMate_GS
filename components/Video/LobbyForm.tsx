@@ -4,7 +4,6 @@ import { Assignment, Phone, PhoneDisabled } from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-hot-toast";
-import ReactPlayer from "react-player";
 
 type LobbyFormProps = {};
 
