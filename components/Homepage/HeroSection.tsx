@@ -5,16 +5,18 @@ import Navbar from "./Navbar";
 import { useRouter } from "next/navigation";
 import { Typewriter } from 'react-simple-typewriter'
 import {motion} from "framer-motion"
-type HeroSectionProps = {};
+type HeroSectionProps = {
+  user?:boolean,
+};
 
-const HeroSection: React.FC<HeroSectionProps> = () => {
+const HeroSection: React.FC<HeroSectionProps> = ({user}) => {
   const router =useRouter();
   return (
    <motion.div initial={{ opacity: 0 }}
    animate={{ opacity: 1 }}
    transition={{ duration: 0.5 }}>
   
-    <Navbar />
+    <Navbar user />
     <section className="section block  bg-peachpuff  sm:pt-[18vh]  lg:min-h-screen text-left text-[1.13rem] text-white font-roboto">
       <div className="container block mx-auto max-w-[1160px]">
         <div className="flexbox  flex flex-col  items-start sm:flex-row sm:justify-center justify-between sm:items-center">

@@ -71,15 +71,15 @@ const Footer: React.FC<FooterProps> = () => {
               Services
             </p>
           </div>
-          <div className="footerColumn ml-0 md:ml-[15px] mr-0 mt-5 md:mt-0">
+          <div className="footerColumn ml-0 md:ml-[15px] mr-0 lg:mr-0 mt-5 md:mt-0">
             <h1 className="md:mt-5 mb-[10px] font-poppins text-[18px] font-medium ">
               Contact Us
             </h1>
             <a
               href="mailto:chatmate@gmail.com"
-              className="font-poppins font-normal text-[13px] text-gray-200 hover:text-secondary3 "
+              className="font-poppins font-normal text-[12px] text-gray-200 hover:text-secondary3 "
             >
-              chatmate@gmail.com
+              chat@mate.com
             </a>
             <a
               href="tel:1-800-101-202"
