@@ -1,6 +1,6 @@
 import About from "@/components/Homepage/About";
 import BusinessSection from "@/components/Homepage/BusinessSection";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Homepage/Footer";
 import HeroSection from "@/components/Homepage/HeroSection";
 import { UserButton } from "@clerk/nextjs";
 

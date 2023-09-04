@@ -1,6 +1,7 @@
 "use client";
 import { useSocketContext } from "@/context/SocketContext";
 import { Assignment, Phone, PhoneDisabled } from "@mui/icons-material";
+import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-hot-toast";
@@ -26,14 +27,17 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
   useEffect(() => {
     const startVideo = async () => {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true,
+          audio: true,
+        });
         setMyStream(stream);
       } catch (error) {
         console.log("Error accessing camera", error);
       }
     };
     startVideo();
-  }, []);
+  }, [copied]);
 
   useEffect(() => {
     if (videoRef.current && myStream) {
@@ -56,7 +60,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
   };
   return (
     <div className="relative h-screen overflow-hidden bg-black ">
-       <video
+      <video
         ref={videoRef}
         autoPlay
         muted
@@ -65,11 +69,24 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
       />
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
       <div className="absolute top-0 left-0 flex justify-center items-center w-full h-full">
-        <div className="max-w-lg rounded-lg bg-gray-800 p-4">
-          <div className="bg-gray-300 rounded-t-lg p-4 text-center text-2xl font-semibold">
-            <p>👋 Make a call</p>
+        <div className="flex relative items-center justify-center py-8 bg-peachpuff rounded-md border  border-secondary1  mx-4">
+          <div className="flex flex-col    pl-8 mr-6 mt-5 space-y-1 max-w-[140px] sm:max-w-[200px] ">
+            <Image
+              alt="logo"
+              src="/logo.png"
+              className="absolute top-4"
+              quality={80}
+              width={64}
+              height={64}
+            />
+            <h3 className="font-semibold  tracking-tight leading-[120%] font-poppins text-[20px] sm:text-[24px] mb-4">
+              Start Calling
+            </h3>
+            <p className="text-gray-900 font-poppins text-[14px] sm:text-sm">
+              Let's See each other Faces
+            </p>
           </div>
-          <div className="p-4 w-">
+          <div className="pr-8 pt-0 grid gap-4">
             <form
               id="join-form"
               action=""
@@ -82,40 +99,50 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
                 id="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-gray-700 text-white  rounded-md p-2 focus:outline-none"
+                className="flex h-9 w-full rounded-md border border-input bg-primary2/50 px-3 py-1 text-2xs-5 sm:text-[13px]  shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 placeholder="Enter Name"
               />
-              <div className="flex gap-2">
+              <div
+                className={`inline-flex items-center justify-center rounded-md text-2xs-2 sm:text-[13px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input  shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-1 pt-2 ${
+                  copied ? "bg-secondary1" : "bg-primary2/50"
+                }`}
+              >
                 <CopyToClipboard text={me} onCopy={handleCopyToClipboard}>
-                  <span
-                    className={` w-full text-lg h-9 pt-[7px] text-center rounded-md cursor-pointer ${
-                      copied ? "bg-green-400" : "bg-gray-400"
-                    }`}
-                  >
+                  <span className={` rounded-md cursor-pointer pb-2 `}>
                     <Assignment />
                     {copied ? " Copied!" : "Copy Your ID"}
                   </span>
                 </CopyToClipboard>
               </div>
-              <div className="flex  ">
-                <input
-                  name="Call"
-                  id="Call"
-                  value={idToCall}
-                  placeholder="Put Receiver's ID"
-                  onChange={(e) => setIdToCall(e.target.value)}
-                  className="w-fit bg-gray-700 text-white rounded-md p-2 focus:outline-none"
-                />
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t"></span>
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-background px-2 text-muted-foreground">
+                    Or
+                  </span>
+                </div>
+              </div>
+              <input
+                name="Call"
+                id="Call"
+                value={idToCall}
+                placeholder="Put Receiver's ID"
+                onChange={(e) => setIdToCall(e.target.value)}
+                className="flex h-9 w-full rounded-md border border-input bg-primary2/50 px-3 pb-1 text-2xs-5 sm:text-[13px]  shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+              />
+              <div className="h-9 rounded-md font-medium transition-colors bg-secondary3 hover:bg-secondary1 w-full flex justify-center items-center">
                 <Phone
-                  className="ml-2 h-[40px] w-12 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition duration-300"
+                  className=" text-white w-full  "
                   onClick={handleCallClick}
                 />
               </div>
             </form>
           </div>
         </div>
-          {!ignored && call.isReceivingCall && !callAccepted && (
-        <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4">
+        {!ignored && call.isReceivingCall && !callAccepted && (
+          <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4">
             <div className="bg-gray-900 p-4 rounded-lg shadow-lg text-white">
               <div className="text-2xl font-semibold mb-2">
                 {call.name} is calling
@@ -135,8 +162,8 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
                 </button>
               </div>
             </div>
-        </div>
-          )}
+          </div>
+        )}
       </div>
     </div>
   );
