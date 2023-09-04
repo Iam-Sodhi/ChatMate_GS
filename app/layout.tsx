@@ -1,4 +1,6 @@
 import { Toaster } from "react-hot-toast";
+import { ClerkProvider } from '@clerk/nextjs'
+ 
 import "./globals.css";
 export const metadata = {
   title: "ChatMate: Connecting You Through Words and Faces.",
@@ -11,13 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en"  >
       <body>
-        {/* <ContextProvider> */}
-
+       <ClerkProvider >
         {children}
         <Toaster position="top-right" />
-        {/* </ContextProvider> */}
+       </ClerkProvider>
       </body>
     </html>
   );
