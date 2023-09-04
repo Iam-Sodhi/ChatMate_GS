@@ -10,7 +10,10 @@ type HeroSectionProps = {};
 const HeroSection: React.FC<HeroSectionProps> = () => {
   const router =useRouter();
   return (
-   <>
+   <motion.div initial={{ opacity: 0 }}
+   animate={{ opacity: 1 }}
+   transition={{ duration: 0.5 }}>
+  
     <Navbar />
     <section className="section block  bg-peachpuff  sm:pt-[18vh]  lg:min-h-screen text-left text-[1.13rem] text-white font-roboto">
       <div className="container block mx-auto max-w-[1160px]">
@@ -67,7 +70,8 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
           </motion.div>
         </div>
       </div>
-    </section></>
+    </section>
+    </motion.div>
   );
 };
 export default HeroSection;
