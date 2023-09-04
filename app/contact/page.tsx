@@ -1,6 +1,6 @@
 "use client";
 import { sendEmail } from "@/actions/sendEmail";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Homepage/Navbar";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";

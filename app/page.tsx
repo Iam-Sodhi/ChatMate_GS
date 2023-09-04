@@ -1,7 +1,7 @@
-import About from "@/components/About";
-import BusinessSection from "@/components/BusinessSection";
+import About from "@/components/Homepage/About";
+import BusinessSection from "@/components/Homepage/BusinessSection";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/Homepage/HeroSection";
 import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
