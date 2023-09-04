@@ -14,7 +14,10 @@ const About: React.FC<AboutProps> = () => {
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
-    <section id="about" className="section bg-primary2 ">
+    <motion.section id="about" className="section bg-primary2 "
+    initial={{ opacity: 0 }}
+   animate={{ opacity: 1 }}
+   transition={{ duration: 0.5 }}>
       <div className="container mx-auto max-w-[1160px] text-center "
       > 
       <motion.div
@@ -39,7 +42,7 @@ const About: React.FC<AboutProps> = () => {
            <Image alt="about Image" src="/aboutImage.jpg" className="inline-block max-w-[200%] mb-[10px] sm:mb-0 sm:max-w-full" width={2098} height={1398}  quality={80}/>
            </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default About;

@@ -142,10 +142,10 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
           </div>
         </div>
         {!ignored && call.isReceivingCall && !callAccepted && (
-          <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4">
-            <div className="bg-gray-900 p-4 rounded-lg shadow-lg text-white">
-              <div className="text-2xl font-semibold mb-2">
-                {call.name} is calling
+          <div className="fixed bottom-0 left-0 right-0  p-4">
+            <div className="bg-peachpuff p-4 rounded-lg shadow-lg text-white">
+              <div className="text-2xl text-black font-poppins font-semibold mb-2">
+                {call.name} is calling...
               </div>
               <div className="flex items-center justify-between">
                 <button
