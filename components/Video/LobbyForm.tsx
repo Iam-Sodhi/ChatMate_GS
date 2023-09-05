@@ -19,6 +19,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
 
   const handleCopyToClipboard = () => {
     setCopied(true);
+    //localStorage.setItem('userId', me); // Store the user's ID
     setTimeout(() => setCopied(false), 2000); // Reset the feedback message after 2 seconds
   };
   const handleIgnore = () => {
@@ -37,7 +38,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
       }
     };
     startVideo();
-  }, [copied]);
+  }, []);
 
   useEffect(() => {
     if (videoRef.current && myStream) {
@@ -93,6 +94,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
               autoComplete="off"
               noValidate
               className="flex flex-col gap-y-3"
+
             >
               <input
                 name="Name"
