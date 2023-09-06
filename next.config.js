@@ -1,15 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { // this is to use server actions in the foem
-    serverActions: true,
-  },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
-      config.resolve.fallback = {
-        fs: false,
-      };
-    }
+  webpack: (config) => {
     config.externals.push({
       "utf-8-validate": "commonjs utf-8-validate",
       bufferutil: "commonjs bufferutil"
@@ -19,10 +10,10 @@ const nextConfig = {
   },
   images: {
     domains: [
-      "uploadthing.com"
+      "uploadthing.com",
+      "utfs.io"
     ]
   }
-  
 }
 
 module.exports = nextConfig
