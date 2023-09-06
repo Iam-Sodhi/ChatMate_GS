@@ -19,6 +19,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
 
   const handleCopyToClipboard = () => {
     setCopied(true);
+    navigator.clipboard.writeText(me);
     //localStorage.setItem('userId', me); // Store the user's ID
     setTimeout(() => setCopied(false), 2000); // Reset the feedback message after 2 seconds
   };
