@@ -89,11 +89,8 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
             </p>
           </div>
           <div className="pr-8 pt-0 grid gap-4">
-            <form
+            <div
               id="join-form"
-              action=""
-              autoComplete="off"
-              noValidate
               className="flex flex-col gap-y-3"
 
             >
@@ -141,7 +138,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
                   onClick={handleCallClick}
                 />
               </div>
-            </form>
+            </div>
           </div>
         </div>
         {!ignored && call.isReceivingCall && !callAccepted && (
