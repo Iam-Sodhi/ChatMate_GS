@@ -85,7 +85,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
               Start Calling
             </h3>
             <p className="text-gray-900 font-poppins text-[14px] sm:text-sm">
-              Let's See each other Faces
+              Let&apos;s See each other Faces
             </p>
           </div>
           <div className="pr-8 pt-0 grid gap-4">
