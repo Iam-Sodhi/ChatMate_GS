@@ -64,6 +64,7 @@
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/simple-peer": "^9.11.5",
     "encoding": "^0.1.13",
+    "eslint-config-prettier": "^9.0.0",
     "prisma": "^5.2.0"
   }
 }
