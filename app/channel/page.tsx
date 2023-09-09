@@ -16,7 +16,7 @@ export default async function Channel() {
     },
   });
   if (server) {
-    return redirect(`/server/${server.id}`);
+    return redirect(`/channel/servers/${server.id}`);
   }
   return (
     <>

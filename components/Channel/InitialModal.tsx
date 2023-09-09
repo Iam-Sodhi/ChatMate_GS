@@ -9,7 +9,7 @@ import { Input } from '../ui/input';
 import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import axios from "axios";
-
+import FileUpload from "./FileUpload";
 type initialModalProps = {
     
 };
