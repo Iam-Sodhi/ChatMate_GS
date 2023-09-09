@@ -61,7 +61,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
     callUser(idToCall, name);
   };
   return (
-    <div className="relative h-screen overflow-hidden bg-black ">
+    <div className="relative h-screen overflow-hidden bg-black  text-black">
       <video
         ref={videoRef}
         autoPlay

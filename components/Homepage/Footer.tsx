@@ -7,7 +7,7 @@ type FooterProps = {};
 const Footer: React.FC<FooterProps> = () => {
   return (
     <section className="section pb-[30px] bg-primary2">
-      <div className="mx-auto max-w-[1160px] ">
+      <div className="mx-auto max-w-[1160px]  text-black">
         <div className="flex justify-start flex-wrap object-fill  md:flex-nowrap md:justify-between items-start">
           <motion.div className="ml-0 mr-7 md:mr-5 max-w-[130px] md:max-w-none footerColumn"
            initial={{ opacity: 0.5, x: -100 }}
@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = () => {
             </p>
           </motion.div>
           <div className="footerColumn hidden md:flex"></div>
-          <div className="footerColumn">
+          <div className="footerColumn ">
             <h1 className="mt-5 mb-[10px] font-poppins text-[18px] font-medium ">
               Help
             </h1>

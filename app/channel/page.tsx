@@ -1,4 +1,4 @@
-import InitialModal from "@/components/Channel/InitialModal";
+import InitialModal from "@/components/Channel/modals/InitialModal";
 import { ModeToggle } from "@/components/modeToggle";
 import { db } from "@/lib/serverRelated/db";
 import { initialProfile } from "@/lib/serverRelated/inititalProfile";
@@ -16,7 +16,7 @@ export default async function Channel() {
     },
   });
   if (server) {
-    return redirect(`/server/${server.id}`);
+    return redirect(`/channel/servers/${server.id}`);
   }
   return (
     <>

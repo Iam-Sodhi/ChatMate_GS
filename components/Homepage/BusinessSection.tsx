@@ -35,7 +35,7 @@ const BusinessSection: React.FC<BusinessSectionProps> = () => {
               }}
               viewport={{once: true}}>
 
-            <h1 className="mt-5 mb-3 text-[27px] sm:text-[33px]  lg:text-[45px] leading-[120%] font-poppins ">Perfect Solution for Small Businesses</h1>
+            <h1 className="mt-5 mb-3 text-[27px] sm:text-[33px]  lg:text-[45px] leading-[120%] font-poppins text-black ">Perfect Solution for Small Businesses</h1>
             <p className="mb-4 text-[13px] md:text-[15px]  lg:text-[18px] text-gray-200  font-poppins"> Pricing plans that fit like a glove.</p>
             <button  className="md:inline-block block text-white font-medium   font-roboto
             text-[12px] mr-0 object-fill sm:text-[18px] hover:bg-secondary1   border-solid border-white text-center align-middle bg-secondary3 box-border  py-[11px]  px-[26px] sm:px-[14px]  sm:py-[15px] rounded-sm sm:mr-[20px] max-w-[200px] sm:max-w-none border-[1.5px] leading-[117.02%] ">
