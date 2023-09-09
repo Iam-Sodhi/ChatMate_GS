@@ -7,6 +7,7 @@ import { currentUser } from "@clerk/nextjs/server";
 
 export default async function Home() {
   const User = await currentUser();
+  
   let user=false;
   if(User){ user=true}
   return (
