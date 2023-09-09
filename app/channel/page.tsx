@@ -1,4 +1,4 @@
-import InitialModal from "@/components/Channel/modals/InitialModal";
+import InitialModal from "@/components/Channel/Modal/InitialModal";
 import { ModeToggle } from "@/components/modeToggle";
 import { db } from "@/lib/serverRelated/db";
 import { initialProfile } from "@/lib/serverRelated/inititalProfile";
