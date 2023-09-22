@@ -29,7 +29,7 @@ export const InviteModal = () => {
     const [copied, setCopied] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
   
-    const inviteUrl = `${origin}/invite/${server?.inviteCode}`;
+    const inviteUrl = `${origin}/channel/invite/${server?.inviteCode}`;
   
     const onCopy = () => {
       navigator.clipboard.writeText(inviteUrl);

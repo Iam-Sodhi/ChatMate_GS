@@ -1,9 +1,10 @@
+import { v4 as uuidv4 } from "uuid";
+import { NextResponse } from "next/server";
 import { currentProfile } from "@/lib/serverRelated/currentProfile";
 import { db } from "@/lib/serverRelated/db";
-import { NextResponse } from "next/server";
 
 
-export async function DELETE(
+export async function PATCH(
   req: Request,
   { params }: { params: { serverId: string } }
 ) {
@@ -14,30 +15,8 @@ export async function DELETE(
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
-    const server = await db.server.delete({
-      where: {
-        id: params.serverId,
-        profileId: profile.id,
-      }
-    });
-
-    return NextResponse.json(server);
-  } catch (error) {
-    console.log("[SERVER_ID_DELETE]", error);
-    return new NextResponse("Internal Error", { status: 500 });
-  }
-}
-
-export async function PATCH(
-  req: Request,
-  { params }: { params: { serverId: string } }
-) {
-  try {
-    const profile = await currentProfile();
-    const { name, imageUrl } = await req.json();
-
-    if (!profile) {
-      return new NextResponse("Unauthorized", { status: 401 });
+    if (!params.serverId) {
+      return new NextResponse("Server ID Missing", { status: 400 });
     }
 
     const server = await db.server.update({
@@ -46,14 +25,13 @@ export async function PATCH(
         profileId: profile.id,
       },
       data: {
-        name,
-        imageUrl,
-      }
+        inviteCode: uuidv4(),
+      },
     });
 
     return NextResponse.json(server);
   } catch (error) {
-    console.log("[SERVER_ID_PATCH]", error);
+    console.log("[SERVER_ID]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
