@@ -14,7 +14,7 @@ import {
 import { useState } from "react";
 import { MemberRole } from "@prisma/client";
 import { useRouter } from "next/navigation";
-
+import qs from "query-string";
 import {
   Dialog,
   DialogContent,
@@ -36,6 +36,7 @@ import {
   DropdownMenuSubTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useModal } from "@/hooks/useModalStore";
+import UserAvatar from "../UserAvatar";
 
 const roleIconMap = {
   "GUEST": null,
@@ -51,47 +52,47 @@ export const MembersModal = () => {
   const isModalOpen = isOpen && type === "members";
   const { server } = data as { server: ServerWithMembersWithProfiles };
 
-//   const onKick = async (memberId: string) => {
-//     try {
-//       setLoadingId(memberId);
-//       const url = qs.stringifyUrl({
-//         url: `/api/members/${memberId}`,
-//         query: {
-//           serverId: server?.id,
-//         },
-//       });
+  const onKick = async (memberId: string) => {
+    try {
+      setLoadingId(memberId);
+      const url = qs.stringifyUrl({
+        url: `/api/members/${memberId}`,
+        query: {
+          serverId: server?.id,
+        },
+      });
 
-//       const response = await axios.delete(url);
+      const response = await axios.delete(url);
 
-//       router.refresh();
-//       onOpen("members", { server: response.data });
-//     } catch (error) {
-//       console.log(error);
-//     } finally {
-//       setLoadingId("");
-//     }
-//   }
+      router.refresh();
+      onOpen("members", { server: response.data });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoadingId("");
+    }
+  }
 
-//   const onRoleChange = async (memberId: string, role: MemberRole) => {
-//     try {
-//       setLoadingId(memberId);
-//       const url = qs.stringifyUrl({
-//         url: `/api/members/${memberId}`,
-//         query: {
-//           serverId: server?.id,
-//         }
-//       });
+  const onRoleChange = async (memberId: string, role: MemberRole) => {
+    try {
+      setLoadingId(memberId);
+      const url = qs.stringifyUrl({
+        url: `/api/members/${memberId}`,
+        query: {
+          serverId: server?.id,
+        }
+      });
 
-//       const response = await axios.patch(url, { role });
+      const response = await axios.patch(url, { role });
 
-//       router.refresh();
-//       onOpen("members", { server: response.data });
-//     } catch (error) {
-//       console.log(error);
-//     } finally {
-//       setLoadingId("");
-//     }
-//   }
+      router.refresh();
+      onOpen("members", { server: response.data });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoadingId("");
+    }
+  }
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
@@ -109,7 +110,7 @@ export const MembersModal = () => {
         <ScrollArea className="mt-8 max-h-[420px] pr-6">
           {server?.members?.map((member) => (
             <div key={member.id} className="flex items-center gap-x-2 mb-6">
-              {/* <UserAvatar src={member.profile.imageUrl} /> */}
+              <UserAvatar src={member.profile.imageUrl} />
               <div className="flex flex-col gap-y-1">
                 <div className="text-xs font-semibold flex items-center gap-x-1">
                   {member.profile.name}
@@ -121,12 +122,13 @@ export const MembersModal = () => {
               </div>
               {server.profileId !== member.profileId && loadingId !== member.id && (
                 <div className="ml-auto">
-                  <DropdownMenu>
+                  <DropdownMenu > 
                     <DropdownMenuTrigger>
                       <MoreVertical className="h-4 w-4 text-zinc-500" />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent side="left">
-                      <DropdownMenuSub>
+                    <DropdownMenuContent side="left" className="dark:bg-gray-700 ">
+                      <DropdownMenuSub 
+                      >
                         <DropdownMenuSubTrigger
                           className="flex items-center"
                         >
@@ -135,8 +137,8 @@ export const MembersModal = () => {
                           />
                           <span>Role</span>
                         </DropdownMenuSubTrigger>
-                        {/* <DropdownMenuPortal>
-                          <DropdownMenuSubContent>
+                        <DropdownMenuPortal>
+                          <DropdownMenuSubContent className="dark:bg-gray-700 ">
                             <DropdownMenuItem
                               onClick={() => onRoleChange(member.id, "GUEST")}
                             >
@@ -160,15 +162,15 @@ export const MembersModal = () => {
                               )}
                             </DropdownMenuItem>
                           </DropdownMenuSubContent>
-                        </DropdownMenuPortal> */}
+                        </DropdownMenuPortal>
                       </DropdownMenuSub>
                       <DropdownMenuSeparator />
-                      {/* <DropdownMenuItem
+                      <DropdownMenuItem
                         onClick={() => onKick(member.id)}
                       >
                         <Gavel className="h-4 w-4 mr-2" />
                         Kick
-                      </DropdownMenuItem> */}
+                      </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
