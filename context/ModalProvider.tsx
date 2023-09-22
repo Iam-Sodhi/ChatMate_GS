@@ -1,5 +1,6 @@
 "use client"
 import { CreateServerModal } from '@/components/Channel/Modal/CreateServerModal';
+import { InviteModal } from '@/components/Channel/Modal/InviteModal';
 import React, { useEffect, useState } from 'react';
 
 type ModalProviderProps = {
@@ -21,7 +22,7 @@ const ModalProvider:React.FC<ModalProviderProps> = () => {
   return (
     <>
       <CreateServerModal />
-  
+      <InviteModal />
     </>
   )
 }

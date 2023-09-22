@@ -1,7 +1,11 @@
 import { currentProfile } from '@/lib/serverRelated/currentProfile';
 import { db } from '@/lib/serverRelated/db';
+import { ChannelType } from '@prisma/client';
 import { redirect } from 'next/navigation';
 import React from 'react';
+import ServerHeader from './ServerHeader';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Separator } from '@/components/ui/separator';
 
 type ServerSidebarProps = {
     serverId:string
@@ -13,7 +17,7 @@ const ServerSidebar:React.FC<ServerSidebarProps> = async({
     const profile = await currentProfile();
 
     if (!profile) {
-      return redirect("/");
+      return redirect("/channel");
     }
     const server = await db.server.findUnique({
         where: {
@@ -35,6 +39,30 @@ const ServerSidebar:React.FC<ServerSidebarProps> = async({
           }
         }
       });
-    return <div>Have a good coding</div>
+      const textChannels = server?.channels.filter((channel) => channel.type === ChannelType.TEXT)
+      const audioChannels = server?.channels.filter((channel) => channel.type === ChannelType.AUDIO)
+      const videoChannels = server?.channels.filter((channel) => channel.type === ChannelType.VIDEO)
+      const members = server?.members.filter((member) => member.profileId !== profile.id)
+      if (!server) {
+        return redirect("/channel");
+      }
+    
+      const role = server.members.find((member) => member.profileId === profile.id)?.role;
+
+      return(
+        <div className="flex flex-col h-full text-primary w-full dark:bg-[#2B2D31] bg-[#F2F3F5]">
+        <ServerHeader
+          server={server}
+          role={role}
+        />
+        <ScrollArea  className="flex-1 px-3">
+       
+          <Separator className="bg-zinc-200 dark:bg-zinc-700 rounded-md my-2" />
+       
+       
+        
+        </ScrollArea>
+      </div>
+      )
 }
 export default ServerSidebar;
