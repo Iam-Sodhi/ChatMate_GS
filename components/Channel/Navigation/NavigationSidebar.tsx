@@ -27,7 +27,6 @@ const NavigationSidebar: React.FC<NavigationSidebarProps> = async () => {
     },
   });
   return (
-    <div className="md:flex h-full w-[72px] z-30 flex-col fixed inset-y-0">
       <div className="space-y-4 flex flex-col items-center h-full text-primary w-full dark:bg-[#1E1F22] bg-[#E3E5E8] py-3">
         <NavigationAction />
         <Separator className="h-[2px] bg-zinc-300 dark:bg-zinc-700 rounded-md w-10 mx-auto" />
@@ -54,7 +53,6 @@ const NavigationSidebar: React.FC<NavigationSidebarProps> = async () => {
           />
         </div>
       </div>
-    </div>
   );
 };
 export default NavigationSidebar;

@@ -40,7 +40,7 @@ export const ServerChannel = ({
     router.push(`/channel/servers/${params?.serverId}/channels/${channel.id}`)
   }
 
-  const onAction = (e: React.MouseEvent, action: ModalType) => {
+  const onAction = (e: React.MouseEvent, action: ModalType) => { // to stop the being the above onClick being triggered 
     e.stopPropagation();
     onOpen(action, { channel, server });
   }
