@@ -33,7 +33,7 @@ const ServerHeader:React.FC<ServerHeaderProps> = ({
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="w-56 text-xs font-medium text-black dark:text-neutral-400 space-y-[2px]"
+          className="w-56 text-xs font-medium bg-white dark:bg-gray-900 text-black dark:text-neutral-400 space-y-[2px]"
         >
           {isModerator && (
             <DropdownMenuItem
