@@ -29,17 +29,16 @@ export default function Contact() {
             </a>{" "}
             or through this form.
           </p>
-          <form
-            action={async (formData) => {
-              const { data, error } = await sendEmail(formData);
-              if (error) {
-                toast.error(error);
-                return;
-              }
-              toast.success("Email sent successfully!");
-            }}
-            className="mt-10 flex flex-col dark:text-black"
-          >
+          <form action={async(formData)=>{
+       const {data,error}= await sendEmail(formData);
+       if(error){
+       // alert(error);  //we are using react-hot-toast to desing the alert message
+        toast.error(error);
+       return;
+       }
+       toast.success("Email sent successfully!");
+
+     }} className="mt-10 flex flex-col dark:text-black">
             {/* to use function in action you also need to modify next.congig.js file */}
             <input
               className="h-14 rounded-lg borderBlack px-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"

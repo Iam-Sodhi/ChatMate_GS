@@ -13,7 +13,7 @@ export default function contactFormEmail({message,senderEmail}:contactFormEmailP
   return (
     <Html>
         <Head/>
-        <Preview>New message from chatMate</Preview>
+        <Preview>New message from your Portfolio site</Preview>
         <Tailwind>
             <Body className='bg-gray-100 text-black'>
                 <Container>
