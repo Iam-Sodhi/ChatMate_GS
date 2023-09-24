@@ -8,6 +8,7 @@ import { EditServerModal } from '@/components/Channel/Modal/EditServerModal';
 import { InviteModal } from '@/components/Channel/Modal/InviteModal';
 import { LeaveServerModal } from '@/components/Channel/Modal/LeaveServerModal';
 import { MembersModal } from '@/components/Channel/Modal/MembersModal';
+import { MessageFileModal } from '@/components/Channel/Modal/MessageFileModal';
 import React, { useEffect, useState } from 'react';
 
 type ModalProviderProps = {
@@ -37,6 +38,7 @@ const ModalProvider:React.FC<ModalProviderProps> = () => {
       <DeleteServerModal />
       <DeleteChannelModal />
       <EditChannelModal />
+      <MessageFileModal />
     </>
   )
 }
