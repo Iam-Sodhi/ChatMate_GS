@@ -1,4 +1,7 @@
 import { ChatHeader } from "@/components/Channel/Chat/ChatHeader";
+import { ChatInput } from "@/components/Channel/Chat/ChatInput";
+import { ChatMessages } from "@/components/Channel/Chat/ChatMessages";
+import { MediaRoom } from "@/components/MediaRoom";
 import { getOrCreateConversation } from "@/lib/serverRelated/conversation";
 import { currentProfile } from "@/lib/serverRelated/currentProfile";
 import { db } from "@/lib/serverRelated/db";
@@ -59,7 +62,7 @@ const MemberIdPage = async ({
         serverId={params.serverId}
         type="conversation"
       />
-      {/* {searchParams.video && (
+      {searchParams.video && (
         <MediaRoom
           chatId={conversation.id}
           video={true}
@@ -90,7 +93,7 @@ const MemberIdPage = async ({
             }}
           />
         </>
-      )} */}
+      )}
     </div>
    );
 }

@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/context/theme-provider";
 import ModalProvider from "@/context/ModalProvider";
+import { SocketProvider } from "@/context/socketProvider";
+import { QueryProvider } from "@/context/QueryProvider";
 
 
 export default function RootLayout({
@@ -15,9 +17,15 @@ export default function RootLayout({
             defaultTheme="dark"
             enableSystem={false}
             storageKey="discord-theme"
-          >
-              <ModalProvider />
+          >  
+          <SocketProvider >
+          <ModalProvider />
+               <QueryProvider >
+
                 {children}
+               </QueryProvider>
+             
+          </SocketProvider>
           </ThemeProvider>
       </div>
   );
