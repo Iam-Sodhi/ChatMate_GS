@@ -1,7 +1,7 @@
 import { ChatHeader } from "@/components/Channel/Chat/ChatHeader";
 import { ChatInput } from "@/components/Channel/Chat/ChatInput";
 import { ChatMessages } from "@/components/Channel/Chat/ChatMessages";
-import { MediaRoom } from "@/components/Channel/MediaRoom";
+import { MediaRoom } from "@/components/MediaRoom";
 import { currentProfile } from "@/lib/serverRelated/currentProfile";
 import { db } from "@/lib/serverRelated/db";
 import { redirectToSignIn } from "@clerk/nextjs";
