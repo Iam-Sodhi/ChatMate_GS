@@ -1,6 +1,7 @@
 import { ChatHeader } from "@/components/Channel/Chat/ChatHeader";
 import { ChatInput } from "@/components/Channel/Chat/ChatInput";
 import { ChatMessages } from "@/components/Channel/Chat/ChatMessages";
+import { MediaRoom } from "@/components/Channel/MediaRoom";
 import { currentProfile } from "@/lib/serverRelated/currentProfile";
 import { db } from "@/lib/serverRelated/db";
 import { redirectToSignIn } from "@clerk/nextjs";
@@ -48,8 +49,8 @@ export default async function ChannelIdPage({
             serverId={channel.serverId}
             type="channel"
           />
-          {/* {channel.type === ChannelType.TEXT && (
-            <> */}
+          {channel.type === ChannelType.TEXT && (
+            <>
               <ChatMessages
                 member={member}
                 name={channel.name}
@@ -73,9 +74,9 @@ export default async function ChannelIdPage({
                   serverId: channel.serverId,
                 }}
               />
-            {/* </>
-          )} */}
-          {/* {channel.type === ChannelType.AUDIO && (
+            </>
+          )}
+          {channel.type === ChannelType.AUDIO && (
             <MediaRoom
               chatId={channel.id}
               video={false}
@@ -88,7 +89,7 @@ export default async function ChannelIdPage({
               video={true}
               audio={true}
             />
-          )} */}
+          )}
         </div>
        );
 }
