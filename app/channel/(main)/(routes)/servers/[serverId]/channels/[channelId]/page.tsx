@@ -1,5 +1,6 @@
 import { ChatHeader } from "@/components/Channel/Chat/ChatHeader";
 import { ChatInput } from "@/components/Channel/Chat/ChatInput";
+import { ChatMessages } from "@/components/Channel/Chat/ChatMessages";
 import { currentProfile } from "@/lib/serverRelated/currentProfile";
 import { db } from "@/lib/serverRelated/db";
 import { redirectToSignIn } from "@clerk/nextjs";
@@ -49,7 +50,7 @@ export default async function ChannelIdPage({
           />
           {/* {channel.type === ChannelType.TEXT && (
             <> */}
-              {/* <ChatMessages
+              <ChatMessages
                 member={member}
                 name={channel.name}
                 chatId={channel.id}
@@ -62,7 +63,7 @@ export default async function ChannelIdPage({
                 }}
                 paramKey="channelId"
                 paramValue={channel.id}
-              /> */}
+              />
               <ChatInput
                 name={channel.name}
                 type="channel"
