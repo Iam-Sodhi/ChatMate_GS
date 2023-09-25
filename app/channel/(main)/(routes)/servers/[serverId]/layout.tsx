@@ -31,12 +31,12 @@ export  default async function ServerIdLayout({
     return (
         
         <div className="h-full">
-      
-        <div className="h-full ">
+      <div className=" w-full  md:w-[calc(100%-288px)] ">
+
           {children}
-        </div>
+      </div>
           <div 
-        className="  invisible md:visible md:flex h-full w-72 z-20 flex-col fixed right-0 inset-y-0">
+        className="  invisible md:visible md:flex h-full w-0 md:w-72 z-20 flex-col fixed right-0 inset-y-0">
           <ServerSidebar serverId={params.serverId} />
         </div>
       </div>

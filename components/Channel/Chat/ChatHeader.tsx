@@ -19,10 +19,10 @@ export const ChatHeader = ({
   imageUrl
 }: ChatHeaderProps) => {
   return (
-    <div className="text-md font-semibold px-3 flex items-center h-12 border-neutral-200 dark:border-neutral-800 border-b-2">
+    <div className="text-md fixed w-full md:w-[65%] lg:w-[80%]  font-semibold px-3 bg-secondary1 text-white  flex items-center h-16 border-neutral-200 dark:border-neutral-800 border-b-2">
       <MobileToggle serverId={serverId} />
       {type === "channel" && (
-        <Hash className="w-5 h-5 text-zinc-500 dark:text-zinc-400 mr-2" />
+        <Hash className="w-5 h-5 text-white mr-2" />
       )}
       {type === "conversation" && (
         <UserAvatar 
@@ -30,7 +30,7 @@ export const ChatHeader = ({
           className="h-8 w-8 md:h-8 md:w-8 mr-2"
         />
       )}
-      <p className="font-semibold text-md text-black dark:text-white">
+      <p className="font-semibold text-lg text-white">
         {name}
       </p>
       <div className="ml-auto flex items-center">

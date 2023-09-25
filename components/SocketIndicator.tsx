@@ -10,7 +10,7 @@ export const SocketIndicator = () => {
     return (
       <Badge 
         variant="outline" 
-        className="bg-yellow-600 text-white border-none"
+        className="bg-yellow-600 text-white border-none md:absolute right-[20%] md:right-[20%] lg:right-[15%]"
       >
         Fallback: Polling every 1s
       </Badge>
@@ -20,7 +20,7 @@ export const SocketIndicator = () => {
   return (
     <Badge 
       variant="outline" 
-      className="bg-emerald-600 text-white border-none"
+      className="bg-pink text-white border-none md:absolute md:right-[20%] lg:right-[15%]"
     >
       Live: Real-time updates
     </Badge>
