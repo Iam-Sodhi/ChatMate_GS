@@ -25,8 +25,8 @@ const ActionTooltip:React.FC<ActionTooltipProps> = ({
             <TooltipTrigger asChild>
               {children}
             </TooltipTrigger>
-            <TooltipContent side={side} align={align}>
-              <p className="font-semibold text-sm capitalize">
+            <TooltipContent side={side} align={align} className='bg-secondary3 border-none dark:bg-[#1E1F22] ' >
+              <p className="font-semibold text-sm text-white capitalize">
                 {label.toLowerCase()}
               </p>
             </TooltipContent>

@@ -62,8 +62,7 @@ export const MediaRoom = ({
       audio={audio}
     >
        <VideoConference />
-      <RoomAudioRenderer />
-       <ControlBar />
+     
     </LiveKitRoom>
   )
 }

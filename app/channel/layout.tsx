@@ -11,10 +11,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <div >
+      <div  suppressHydrationWarning>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem={false}
             storageKey="discord-theme"
           >  

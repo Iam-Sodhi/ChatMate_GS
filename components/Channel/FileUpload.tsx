@@ -3,6 +3,7 @@ import { UploadDropzone } from '@/lib/serverRelated/uploadthing';
 import { FileIcon, X } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
+import "@uploadthing/react/styles.css";
 type FileUploadProps = {
     onChange:(url?:string)=>void;
     value: string;
