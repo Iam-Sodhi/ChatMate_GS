@@ -104,8 +104,8 @@ export const MessageFileModal = () => {
                 />
               </div>
             </div>
-            <DialogFooter className="bg-gray-100 px-6 py-4">
-              <Button variant="primary" disabled={isLoading}>
+            <DialogFooter className="bg-peachpuff dark:bg-[#2B2D31] px-6 py-4">
+              <Button variant="primary" className="bg-secondary3 hover:bg-secondary1" disabled={isLoading}>
                 Send
               </Button>
             </DialogFooter>

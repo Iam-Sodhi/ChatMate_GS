@@ -20,9 +20,9 @@ const NavigationAction:React.FC<NavigationActionProps> = () => {
         onClick={() => onOpen("createServer")}
         className="group flex items-center"
       >
-        <div className="flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] bg-white  transition-all overflow-hidden items-center justify-center bg-background group-hover:bg-secondary1 dark:bg-neutral-700 dark:group-hover:bg-emerald-500">
+        <div className="flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] bg-white  transition-all overflow-hidden items-center justify-center bg-background group-hover:bg-secondary1 ">
           <Plus
-            className="group-hover:text-white transition dark:text-emerald-500 text-secondary1"
+            className="group-hover:text-white transition  text-secondary1"
             size={25}
           />
         </div>

@@ -49,15 +49,16 @@ export const DeleteServerModal = () => {
           </DialogTitle>
           <DialogDescription className="text-center text-zinc-500">
             Are you sure you want to do this? <br />
-            <span className="text-indigo-500 font-semibold">{server?.name}</span> will be permanently deleted.
+            <span className="text-secondary1 font-semibold">{server?.name}</span> will be permanently deleted.
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="bg-gray-100 px-6 py-4">
+        <DialogFooter className="bg-peachpuff dark:bg-[#2B2D31] px-6 py-4">
           <div className="flex items-center justify-between w-full">
             <Button
               disabled={isLoading}
               onClick={onClose}
               variant="ghost"
+              className="bg-white hover:bg-white/75"
             >
               Cancel
             </Button>
@@ -65,6 +66,7 @@ export const DeleteServerModal = () => {
               disabled={isLoading}
               variant="primary"
               onClick={onClick}
+              className="bg-secondary3 hover:bg-secondary1"
             >
               Confirm
             </Button>

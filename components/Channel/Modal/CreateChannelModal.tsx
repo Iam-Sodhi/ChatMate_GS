@@ -144,12 +144,12 @@ export const CreateChannelModal = () => {
                           <SelectValue placeholder="Select a channel type" />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent className="dark:bg-gray-900" >
+                      <SelectContent className="bg-[#F2F3F5]" >
                         {Object.values(ChannelType).map((type) => (
                           <SelectItem
                             key={type}
                             value={type}
-                            className="capitalize"
+                            className="capitalize hover:bg-zinc-300 dark:hover:bg-zinc-700/50"
                           >
                             {type.toLowerCase()}
                           </SelectItem>
@@ -161,8 +161,8 @@ export const CreateChannelModal = () => {
                 )}
               />
             </div>
-            <DialogFooter className="bg-gray-100 px-6 py-4">
-              <Button variant="primary" disabled={isLoading}>
+            <DialogFooter className="bg-peachpuff dark:bg-[#2B2D31] px-6 py-4">
+              <Button variant="primary" className="bg-secondary3 hover:bg-secondary1" disabled={isLoading}>
                 Create
               </Button>
             </DialogFooter>

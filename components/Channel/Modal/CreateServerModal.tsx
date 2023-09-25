@@ -107,7 +107,7 @@ export const CreateServerModal = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel
-                      className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70"
+                      className="uppercase text-xs font-bold text-zinc-800 dark:text-secondary/70"
                     >
                       Server name
                     </FormLabel>
@@ -124,8 +124,8 @@ export const CreateServerModal = () => {
                 )}
               />
             </div>
-            <DialogFooter className="bg-gray-100 px-6 py-4">
-              <Button variant="primary" disabled={isLoading}>
+            <DialogFooter className="bg-peachpuff dark:bg-[#2B2D31] px-6 py-4">
+              <Button variant="primary" className="bg-secondary3 hover:bg-secondary1"  disabled={isLoading}>
                 Create
               </Button>
             </DialogFooter>

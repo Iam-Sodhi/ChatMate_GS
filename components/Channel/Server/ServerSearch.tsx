@@ -1,5 +1,5 @@
 "use client"
-import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
+import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
 import { Search } from 'lucide-react';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
@@ -65,7 +65,9 @@ const ServerSearch:React.FC<ServerSearchProps> = ({
             <span className="text-xs">Ctrl</span>K
           </kbd>
         </button>
+
         <CommandDialog open={open} onOpenChange={setOpen}>
+        <Command className='dark:text-white'>
           <CommandInput placeholder="Search all channels and members" />
           <CommandList>
             <CommandEmpty>
@@ -88,6 +90,7 @@ const ServerSearch:React.FC<ServerSearchProps> = ({
               )
             })}
           </CommandList>
+        </Command>
         </CommandDialog>
       </>
     )

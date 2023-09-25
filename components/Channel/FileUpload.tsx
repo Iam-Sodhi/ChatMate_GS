@@ -39,12 +39,12 @@ const FileUpload:React.FC<FileUploadProps> = ({ onChange,
     if (value && fileType === "pdf") {
       return (
         <div className="relative flex items-center p-2 mt-2 rounded-md bg-background/10">
-          <FileIcon className="h-10 w-10 fill-indigo-200 stroke-indigo-400" />
+          <FileIcon className="h-10 w-10 text-secondary1 stroke-indigo-400" />
           <a 
             href={value}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 text-sm text-indigo-500 dark:text-indigo-400 hover:underline"
+            className="ml-2 text-sm text-secondary1 dark:text-indigo-400 hover:underline"
           >
             {value}
           </a>
