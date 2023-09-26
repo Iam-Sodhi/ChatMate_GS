@@ -30,7 +30,7 @@ const NavigationItem:React.FC<NavigationItemProps> = ({  id,
       className="group relative flex items-center"
     >
       <div className={cn(
-        "absolute left-0 bg-primary rounded-r-full bg-white transition-all w-[4px]",
+        "absolute left-0 bg-primary rounded-r-full bg-secondary1 transition-all w-[4px]",
         params?.serverId !== id && "group-hover:h-[20px]",
         params?.serverId === id ? "h-[36px]" : "h-[8px]"
       )} />

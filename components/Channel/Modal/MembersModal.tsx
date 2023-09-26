@@ -126,7 +126,7 @@ export const MembersModal = () => {
                     <DropdownMenuTrigger>
                       <MoreVertical className="h-4 w-4 text-zinc-500" />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent side="left" className="dark:bg-gray-700 ">
+                    <DropdownMenuContent side="left" className="bg-white dark:bg-[#2B2D31] ">
                       <DropdownMenuSub 
                       >
                         <DropdownMenuSubTrigger
@@ -138,7 +138,7 @@ export const MembersModal = () => {
                           <span>Role</span>
                         </DropdownMenuSubTrigger>
                         <DropdownMenuPortal>
-                          <DropdownMenuSubContent className="dark:bg-gray-700 ">
+                          <DropdownMenuSubContent className=" bg-zinc-100 dark:bg-[#2B2D31]">
                             <DropdownMenuItem
                               onClick={() => onRoleChange(member.id, "GUEST")}
                             >

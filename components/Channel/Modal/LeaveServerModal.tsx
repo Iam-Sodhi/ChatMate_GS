@@ -51,7 +51,7 @@ export const LeaveServerModal = () => {
             Are you sure you want to leave <span className="font-semibold text-indigo-500">{server?.name}</span>?
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="bg-gray-100 px-6 py-4">
+        <DialogFooter className="bg-peachpuff dark:bg-[#2B2D31] px-6 py-4">
           <div className="flex items-center justify-between w-full">
             <Button
               disabled={isLoading}
@@ -64,6 +64,7 @@ export const LeaveServerModal = () => {
               disabled={isLoading}
               variant="primary"
               onClick={onClick}
+              className="bg-secondary3 hover:bg-secondary1"
             >
               Confirm
             </Button>

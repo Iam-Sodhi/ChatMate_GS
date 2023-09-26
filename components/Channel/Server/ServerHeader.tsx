@@ -20,25 +20,25 @@ const ServerHeader:React.FC<ServerHeaderProps> = ({
     const isModerator = isAdmin || role === MemberRole.MODERATOR;
   
     return (
-        <DropdownMenu>
+        <DropdownMenu >
         <DropdownMenuTrigger
           className="focus:outline-none" 
           asChild
         >
           <button
-            className="w-full text-md font-semibold px-3 flex items-center h-12 border-neutral-200 dark:border-neutral-800 border-b-2 hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition"
+            className="w-full text-lg font-semibold px-3 flex items-center h-16 border-neutral-200 dark:border-neutral-800 border-b-2 bg-secondary3 dark:bg-secondary3 text-white  transition"
           >
             {server.name}
-            <ChevronDown className="h-5 w-5 ml-auto" />
+            <ChevronDown className="h-6 w-6 ml-2  text-lg font-extrabold  hover:translate-y-[2px]" />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="w-56 text-xs font-medium bg-white dark:bg-gray-900 text-black dark:text-neutral-400 space-y-[2px]"
+          className="w-56 text-xs font-medium bg-white dark:bg-[#1E1F22] text-black dark:text-neutral-400 space-y-[2px]"
         >
           {isModerator && (
             <DropdownMenuItem
               onClick={() => onOpen("invite", { server })}
-              className="text-indigo-600 dark:text-indigo-400 px-3 py-2 text-sm cursor-pointer"
+              className="text-secondary3 dark:text-secondary3 px-3 py-2 text-sm cursor-pointer"
             >
               Invite People
               <UserPlus className="h-4 w-4 ml-auto" />
