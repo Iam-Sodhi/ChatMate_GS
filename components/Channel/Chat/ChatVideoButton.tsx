@@ -31,7 +31,7 @@ export const ChatVideoButton = () => {
   return (
     <ActionTooltip side="bottom" label={tooltipLabel}>
       <button onClick={onClick} className="hover:opacity-75 transition mr-4">
-        <Icon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+        <Icon className="h-6 w-6 text-peachpuff" />
       </button>
     </ActionTooltip>
   )
