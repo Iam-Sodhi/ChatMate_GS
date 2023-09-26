@@ -84,7 +84,7 @@ export const ChatMessages = ({
 
   if (status === "error") {
     return (
-      <div className="flex flex-col flex-1  mt-14 justify-center items-center">
+      <div className="flex flex-col flex-1 absolute top-[25%] left-[42%] mt-14 justify-center items-center">
         <ServerCrash className="h-7 w-7 text-zinc-500 my-4" />
         <p className="text-xs text-zinc-500 dark:text-zinc-400">
           Something went wrong!
@@ -126,6 +126,7 @@ export const ChatMessages = ({
                 currentMember={member}
                 member={message.member}
                 content={message.content}
+                isCurrent={message.memberId}
                 fileUrl={message.fileUrl}
                 deleted={message.deleted}
                 timestamp={format(new Date(message.createdAt), DATE_FORMAT)}

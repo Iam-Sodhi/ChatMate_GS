@@ -31,7 +31,7 @@ export  default async function ServerIdLayout({
     return (
         
         <div className="h-full">
-      <div className=" w-full  md:w-[calc(100%-288px)] ">
+      <div className=" w-full h-screen bg-pink dark:bg-[#313338] md:w-[calc(100%-288px)] ">
 
           {children}
       </div>

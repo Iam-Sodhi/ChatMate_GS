@@ -36,6 +36,7 @@ interface ChatItemProps {
   currentMember: Member;
   isUpdated: boolean;
   socketUrl: string;
+  isCurrent:string;
   socketQuery: Record<string, string>;
 };
 
@@ -54,6 +55,7 @@ export const ChatItem = ({
   content,
   member,
   timestamp,
+  isCurrent,
   fileUrl,
   deleted,
   currentMember,
@@ -126,24 +128,26 @@ export const ChatItem = ({
   const canEditMessage = !deleted && isOwner && !fileUrl;
   const isPDF = fileType === "pdf" && fileUrl;
   const isImage = !isPDF && fileUrl;
+  const isYou=isCurrent===currentMember.id;
 
   return (
-    <div className="relative group flex items-center hover:bg-black/5 p-4 transition w-full">
-      <div className="group flex gap-x-2 items-start w-full">
+    <div className={cn("relative group flex items-center overflow-hidden hover:bg-black/5 py-4 transition w-full",isYou?"pr-16":"pl-16")}
+   >
+      <div className={cn("group flex gap-x-2 items-start w-full",isYou&& "flex-row-reverse")}>
         <div onClick={onMemberClick} className="cursor-pointer hover:drop-shadow-md transition">
           <UserAvatar src={member.profile.imageUrl} />
         </div>
-        <div className="flex flex-col w-full">
-          <div className="flex items-center gap-x-2">
+        <div className={cn("flex flex-col  py-3 px-6 relative rounded-lg ",isYou?"bg-secondary1":"bg-secondary3" )}>
+          <div className="flex items-center gap-x-2 mb-1">
             <div className="flex items-center">
-              <p onClick={onMemberClick} className="font-semibold text-sm hover:underline cursor-pointer">
+              <p onClick={onMemberClick} className="font-semibold text-sm text-white hover:underline cursor-pointer mr-1 ">
                 {member.profile.name}
               </p>
               <ActionTooltip label={member.role}>
                 {roleIconMap[member.role]}
               </ActionTooltip>
             </div>
-            <span className="text-xs text-zinc-500 dark:text-zinc-400">
+            <span className="text-xs text-zinc-700 ">
               {timestamp}
             </span>
           </div>
@@ -164,12 +168,12 @@ export const ChatItem = ({
           )}
           {isPDF && (
             <div className="relative flex items-center p-2 mt-2 rounded-md bg-background/10">
-              <FileIcon className="h-10 w-10 fill-indigo-200 stroke-indigo-400" />
+              <FileIcon className="h-10 w-10 fill-peachpuff stroke-peru" />
               <a 
                 href={fileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-2 text-sm text-indigo-500 dark:text-indigo-400 hover:underline"
+                className="ml-2 text-sm text-zinc-200 hover:underline"
               >
                 PDF File
               </a>
@@ -177,12 +181,12 @@ export const ChatItem = ({
           )}
           {!fileUrl && !isEditing && (
             <p className={cn(
-              "text-sm text-zinc-600 dark:text-zinc-300",
-              deleted && "italic text-zinc-500 dark:text-zinc-400 text-xs mt-1"
+              "text-sm text-zinc-100",
+              deleted && "italic text-zinc-200  text-xs mt-1"
             )}>
               {content}
               {isUpdated && !deleted && (
-                <span className="text-[10px] mx-2 text-zinc-500 dark:text-zinc-400">
+                <span className="text-[10px] mx-2 text-zinc-200 ">
                   (edited)
                 </span>
               )}
@@ -220,9 +224,7 @@ export const ChatItem = ({
               </span>
             </Form>
           )}
-        </div>
-      </div>
-      {canDeleteMessage && (
+            {canDeleteMessage && (
         <div className="hidden group-hover:flex items-center gap-x-2 absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm">
           {canEditMessage && (
             <ActionTooltip label="Edit">
@@ -243,6 +245,9 @@ export const ChatItem = ({
           </ActionTooltip>
         </div>
       )}
+        </div>
+      </div>
+    
     </div>
   )
 }

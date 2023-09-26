@@ -29,7 +29,7 @@ const ServerHeader:React.FC<ServerHeaderProps> = ({
             className="w-full text-lg font-semibold px-3 flex items-center h-16 border-neutral-200 dark:border-neutral-800 border-b-2 bg-secondary3 dark:bg-secondary3 text-white  transition"
           >
             {server.name}
-            <ChevronDown className="h-8 w-8 ml-auto text-secondary1 text-lg font-extrabold  hover:translate-y-[2px]" />
+            <ChevronDown className="h-6 w-6 ml-2  text-lg font-extrabold  hover:translate-y-[2px]" />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
