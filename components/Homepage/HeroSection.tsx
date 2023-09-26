@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({user}) => {
               delay: 0.3,
             }}>
               
-            <button  className="md:inline-block block text-white font-medium   font-roboto
+            <button onClick={()=>router.push("/channel")}  className="md:inline-block block text-white font-medium   font-roboto
             text-[12px] mr-0 object-fill sm:text-[18px] hover:bg-secondary1  border-solid border-white text-center align-middle bg-secondary3 box-border  py-[11px]  px-[36px] sm:px-[34px]  sm:py-[15px] rounded-sm sm:mr-[20px] max-w-[200px] sm:max-w-none border-[1.5px] leading-[117.02%] ">
                 Start Text Chat
            </button>
