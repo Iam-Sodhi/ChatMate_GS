@@ -131,16 +131,16 @@ export const ChatItem = ({
   const isYou=isCurrent===currentMember.id;
 
   return (
-    <div className={cn("relative group flex items-center overflow-hidden hover:bg-black/5 py-4 transition w-full",isYou?"pr-16":"pl-16")}
+    <div className={cn("relative group flex p-1 items-center overflow-hidden hover:bg-black/5 py-4 transition w-full",isYou?"pr-16":"pl-16")}
    >
       <div className={cn("group flex gap-x-2 items-start w-full",isYou&& "flex-row-reverse")}>
         <div onClick={onMemberClick} className="cursor-pointer hover:drop-shadow-md transition">
           <UserAvatar src={member.profile.imageUrl} />
         </div>
-        <div className={cn("flex flex-col  py-3 px-6 relative rounded-lg ",isYou?"bg-secondary1":"bg-secondary3" )}>
+        <div className={cn("flex flex-col pt-2 pb-1 sm:py-3 px-6 relative rounded-lg ",isYou?"bg-secondary1":"bg-secondary3" )}>
           <div className="flex items-center gap-x-2 mb-1">
             <div className="flex items-center">
-              <p onClick={onMemberClick} className="font-semibold text-sm text-white hover:underline cursor-pointer mr-1 ">
+              <p onClick={onMemberClick} className="font-semibold text-[12px] sm:text-[14px] text-white hover:underline cursor-pointer mr-1 ">
                 {member.profile.name}
               </p>
               <ActionTooltip label={member.role}>
