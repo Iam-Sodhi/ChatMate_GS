@@ -112,15 +112,8 @@ const ContextProvider = ({
   const leaveCall = () => {
     setCallEnded(true);
     setGlobalCallEnded(true);
-    if (connectionRef.current) { // Check if connectionRef.current is not null
-        connectionRef.current.destroy(); // Call destroy only if connectionRef.current is not null
-        connectionRef.current = null; // Set connectionRef.current to null after destroying
-      }
-      if (stream) {
-        stream.getTracks().forEach((track) => {
-          track.stop();
-        });
-      }
+    if (connectionRef.current)
+    connectionRef.current.destroy();
 
     window.location.reload();
   };
