@@ -25,15 +25,8 @@ const VideoChat: React.FC<VideoChatProps> = () => {
       myVideo.current.srcObject = stream;
     }
 
-    if (callEnded) { // Check the local call ended state
-      if (myVideo.current) {
-        myVideo.current.srcObject = null;
-      }
-      if (userVideo.current) {
-        userVideo.current.srcObject = null;
-      }
-    }
-  }, [stream, myVideo, userVideo, callEnded]);
+  
+  }, [callAccepted]);
 
   return (
     <>
