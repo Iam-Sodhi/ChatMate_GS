@@ -6,17 +6,14 @@ import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 
 export default async function Home() {
-  const User = await currentUser();
   
-  let user=false;
-  if(User){ user=true}
   return (
     <main>
       <div className="relative  w-full  overflow-hidden   ">
-        <div className="absolute right-12">
-          <UserButton afterSignOutUrl="/" />
+        <div className="hidden md:flex absolute top-6 lg:right-[3%]">
+          <UserButton  afterSignOutUrl="/" />
         </div>
-        <HeroSection user  />
+        <HeroSection  />
         <About />
         <BusinessSection />
         <Footer />

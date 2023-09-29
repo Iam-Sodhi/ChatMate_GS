@@ -40,11 +40,11 @@ const ServerSearch:React.FC<ServerSearchProps> = ({
       setOpen(false);
   
       if (type === "member") {
-        return router.push(`/servers/${params?.serverId}/conversations/${id}`)
+        return router.push(`/channel/servers/${params?.serverId}/conversations/${id}`)
       }
   
       if (type === "channel") {
-        return router.push(`/servers/${params?.serverId}/channels/${id}`)
+        return router.push(`/channel/servers/${params?.serverId}/channels/${id}`)
       }
     }
     return (
@@ -67,7 +67,7 @@ const ServerSearch:React.FC<ServerSearchProps> = ({
         </button>
 
         <CommandDialog open={open} onOpenChange={setOpen}>
-        <Command className='dark:text-white'>
+        <Command className=' bg-white '>
           <CommandInput placeholder="Search all channels and members" />
           <CommandList>
             <CommandEmpty>

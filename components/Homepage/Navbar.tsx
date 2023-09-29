@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
 import { auth } from "@clerk/nextjs/server";
-import { useClerk } from "@clerk/nextjs";
+import { useClerk, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 type NavbarProps = {
   ContactPage?: boolean;
@@ -11,8 +11,9 @@ type NavbarProps = {
   user?: boolean;
 };
 
-const Navbar: React.FC<NavbarProps> = ({ ContactPage, user, channelPage }) => {
+const Navbar: React.FC<NavbarProps> = ({ ContactPage, channelPage }) => {
   const { signOut } = useClerk();
+  const {isSignedIn}=useUser();
   const router = useRouter();
 
   return (
@@ -46,12 +47,12 @@ const Navbar: React.FC<NavbarProps> = ({ ContactPage, user, channelPage }) => {
                 )}
                 {}
               </ul>
-              {user ? (
+              {isSignedIn ? (
                 <button
                   className="bg-secondary3 box-border rounded-sm text-center align-middle text-[14px]  sm:text-[16px]  text-white border-[1px] border-solid  py-2 sm:py-[10px] px-3 sm:px-4 border-white hover:bg-secondary1 sm:-mr-5 cursor-pointer"
                   onClick={() => signOut()}
                 >
-                  {user ? "Sign Out" : "Sign In"}
+                  {isSignedIn ? "Sign Out" : "Sign In"}
                 </button>
               ) : (
                 <li className="bg-secondary3 box-border rounded-sm text-center align-middle text-[13px]  sm:text-[16px]  text-white border-[1px] border-solid   py-2 sm:py-[10px] px-2 sm:px-4 border-white hover:bg-secondary1 -mr-2 cursor-pointer">

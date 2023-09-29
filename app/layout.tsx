@@ -2,8 +2,8 @@ import { Toaster } from "react-hot-toast";
 import { ClerkProvider } from '@clerk/nextjs'
  
 import "./globals.css";
-import ContextProvider from "@/context/SocketContext";
 import { cn } from "@/lib/utils";
+import { ContextProvider } from "@/context/SocketContext1";
 export const metadata = {
   title: "ChatMate: Connecting You Through Words and Faces.",
   description: "Discover a new way to communicate & connect with fast, easy & unlimited free chat today!",
@@ -26,7 +26,7 @@ export default function RootLayout({
       
         <Toaster position="top-right" />
 
-        </ContextProvider >  
+      </ContextProvider >  
       </body>
     </html>
        </ClerkProvider>
