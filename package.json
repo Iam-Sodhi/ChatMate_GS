@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "prisma":{
-   "seed":"node prisma/seed.js"
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.23.3",
@@ -36,7 +36,6 @@
     "@react-email/components": "0.0.7",
     "@react-email/tailwind": "0.0.8",
     "@tanstack/react-query": "^4.35.3",
-    "@types/node": "20.5.7",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "@uploadthing/react": "^5.5.0",
@@ -75,18 +74,21 @@
     "tailwindcss": "3.3.3",
     "tailwindcss-animate": "^1.0.7",
     "tls": "^0.0.1",
-    "typescript": "5.2.2",
     "uploadthing": "^5.5.3",
     "uuid": "^9.0.0",
     "zod": "^3.22.2",
     "zustand": "^4.4.1"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.6",
+    "@types/node": "^20.7.2",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/simple-peer": "^9.11.5",
     "@types/uuid": "^9.0.3",
     "encoding": "^0.1.13",
     "eslint-config-prettier": "^9.0.0",
-    "prisma": "^5.2.0"
+    "prisma": "^5.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }
