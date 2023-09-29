@@ -38,9 +38,9 @@ const VideoChatControl: React.FC<VideoChatControlProps> = () => {
       <div className="controlContainer">
         <button className="bg-transparent z-50" onClick={toggleCamera}>
           {isCameraOn ? (
-            <VideocamOff className="h-12 w-12" />
+            <VideocamOff className="h-14 w-14" />
           ) : (
-            <Videocam className="h-12 w-12" />
+            <Videocam className="h-14 w-14" />
           )}
         </button>
       </div>

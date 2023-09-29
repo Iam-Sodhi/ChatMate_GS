@@ -4,6 +4,7 @@ import React, {useEffect, useCallback, useContext } from "react";
 import { SocketContext, useSocketContext } from "@/context/SocketContext1";
 import LobbyForm from "./LobbyForm";
 import VideoChatControl from "./VideoChatControl";
+import toast from "react-hot-toast";
 type VideoChatProps = {};
 const VideoChat: React.FC<VideoChatProps> = () => {
 
@@ -25,7 +26,9 @@ const VideoChat: React.FC<VideoChatProps> = () => {
       myVideo.current.srcObject = stream;
     }
 
-  
+      if(callAccepted && stream) {
+        toast.custom(<div className="bg-secondary1 p-2 w-auto rounded-md text-white">Please refresh & try againg if You are unable to connect correctly. It might be some network Issue.</div>)
+      }
   }, [callAccepted]);
 
   return (
