@@ -63,9 +63,6 @@ const ContextProvider = ({
     socket.on('callUser', ({ from, name: callerName, signal }) => {
       setCall({ isReceivingCall: true, from, name: callerName, signal });
     });
-    socket.on("callEnded", () => {
-        setGlobalCallEnded(true); // Set globalCallEnded to true when a call is ended
-      });
   }, []);
 
   const answerCall = () => {
@@ -114,6 +111,7 @@ const ContextProvider = ({
     setGlobalCallEnded(true);
     if (connectionRef.current)
     connectionRef.current.destroy();
+
 
     window.location.reload();
   };

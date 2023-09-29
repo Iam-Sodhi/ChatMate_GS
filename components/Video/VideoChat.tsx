@@ -13,15 +13,12 @@ const VideoChat: React.FC<VideoChatProps> = () => {
     userVideo,
     callEnded,
     stream,
-    leaveCall,
     globalCallEnded,
     name,
     call
   } = useSocketContext();
 
-  const leaveChannel = useCallback(async () => {
-    await leaveCall(); // You can call the leaveCall function from the context
-  }, [leaveCall]);
+
   useEffect(() => {
     // Set the srcObject of myVideo when stream changes
     if (myVideo.current && stream) {
