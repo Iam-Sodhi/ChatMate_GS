@@ -108,7 +108,6 @@ const ContextProvider = ({
 
   const leaveCall = () => {
     setCallEnded(true);
-    setGlobalCallEnded(true);
     if (connectionRef.current)
     connectionRef.current.destroy();
 

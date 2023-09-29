@@ -33,11 +33,11 @@ const VideoChat: React.FC<VideoChatProps> = () => {
         userVideo.current.srcObject = null;
       }
     }
-  }, [stream, myVideo, userVideo, callEnded, callAccepted]);
+  }, [stream, myVideo, userVideo, callEnded]);
 
   return (
     <>
-      {!callAccepted ||globalCallEnded ? ( // Check the global call ended state
+      {!callAccepted ||callEnded ? ( // Check the global call ended state
       <LobbyForm />
     ) : (
       <div>
