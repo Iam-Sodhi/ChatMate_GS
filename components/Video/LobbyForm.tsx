@@ -1,21 +1,24 @@
 "use client";
-import { useSocketContext } from "@/context/SocketContext";
+import { SocketContext, useSocketContext } from "@/context/SocketContext1";
+//import { useSocketContext } from "@/context/SocketContext";
+
 import { Assignment, Phone, PhoneDisabled } from "@mui/icons-material";
 import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { toast } from "react-hot-toast";
 
 type LobbyFormProps = {};
 
 const LobbyForm: React.FC<LobbyFormProps> = () => {
-  const { name, setName, me, callUser, call, answerCall, callAccepted } =
+
+  const { name, setName, me, callUser, call, answerCall, callAccepted ,callEnded} =
     useSocketContext();
   const [copied, setCopied] = useState(false);
   const [idToCall, setIdToCall] = useState("");
   const [ignored, setIgnored] = useState(false);
   const [myStream, setMyStream] = useState<MediaStream | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const myVideo = useRef<HTMLVideoElement | null>(null);
 
   const handleCopyToClipboard = () => {
     setCopied(true);
@@ -27,25 +30,14 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
     setIgnored(true);
   };
   useEffect(() => {
-    const startVideo = async () => {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({
-          video: true,
-          audio: true,
-        });
-        setMyStream(stream);
-      } catch (error) {
-        console.log("Error accessing camera", error);
-      }
-    };
-    startVideo();
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    .then((currentStream) => {
+      setMyStream(currentStream);
+      if(myVideo.current)
+      myVideo.current.srcObject = currentStream;
+    });
   }, []);
 
-  useEffect(() => {
-    if (videoRef.current && myStream) {
-      videoRef.current.srcObject = myStream;
-    }
-  }, [myStream]);
   const handleCallClick = () => {
     if (idToCall.trim() === "") {
       toast.error("Receiver's ID cannot be empty");
@@ -63,11 +55,10 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
   return (
     <div className="relative h-screen overflow-hidden bg-black  text-black">
       <video
-        ref={videoRef}
+        ref={myVideo}
         autoPlay
-        muted
         playsInline
-        className="w-full h-full object-cover block bg-black"
+        className="w-full h-full object-cover block "
       />
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
       <div className="absolute top-0 left-0 flex justify-center items-center w-full h-full">
@@ -89,11 +80,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
             </p>
           </div>
           <div className="pr-8 pt-0 grid gap-4">
-            <div
-              id="join-form"
-              className="flex flex-col gap-y-3"
-
-            >
+            <div id="join-form" className="flex flex-col gap-y-3">
               <input
                 name="Name"
                 id="Name"
@@ -141,7 +128,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
             </div>
           </div>
         </div>
-        {!ignored && call.isReceivingCall && !callAccepted && (
+        {!ignored && call.isReceivingCall && !callAccepted && !callEnded && (
           <div className="fixed bottom-0 left-0 right-0  p-4">
             <div className="bg-peachpuff p-4 rounded-lg shadow-lg text-white">
               <div className="text-2xl text-black font-poppins font-semibold mb-2">
