@@ -10,7 +10,7 @@ type NavigationActionProps = {
 
 const NavigationAction:React.FC<NavigationActionProps> = () => {
     const { onOpen } = useModal();
-    return     <div>
+    return <div>
     <ActionTooltip
       side="right"
       align="center"
