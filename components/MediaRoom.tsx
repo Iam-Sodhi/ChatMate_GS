@@ -60,7 +60,7 @@ export const MediaRoom = ({
       connect={true}
       video={video}
       audio={audio}
-      className="mt-[65px]"
+      className="pt-[65px]"
     >
        <VideoConference />
      

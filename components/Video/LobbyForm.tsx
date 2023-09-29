@@ -57,6 +57,7 @@ const LobbyForm: React.FC<LobbyFormProps> = () => {
       <video
         ref={myVideo}
         autoPlay
+        muted
         playsInline
         className="w-full h-full object-cover block "
       />
