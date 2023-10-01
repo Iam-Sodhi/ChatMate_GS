@@ -55,9 +55,9 @@ const Navbar: React.FC<NavbarProps> = ({ ContactPage, channelPage }) => {
                   {isSignedIn ? "Sign Out" : "Sign In"}
                 </button>
               ) : (
-                <li className="bg-secondary3 box-border rounded-sm text-center align-middle text-[13px]  sm:text-[16px]  text-white border-[1px] border-solid   py-2 sm:py-[10px] px-2 sm:px-4 border-white hover:bg-secondary1 -mr-2 cursor-pointer">
-                  <Link href="/sign-up">Sign Up</Link>
-                </li>
+                <Link  href="/sign-up" className="bg-secondary3 box-border rounded-sm text-center align-middle text-[13px]  sm:text-[16px]  text-white border-[1px] border-solid   py-2 sm:py-[10px] px-2 sm:px-4 border-white hover:bg-secondary1 -mr-2 cursor-pointer">
+                  Sign Up
+                </Link>
               )}
             </nav>
           )}
