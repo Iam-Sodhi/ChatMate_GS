@@ -44,16 +44,18 @@ const NavigationSidebar: React.FC<NavigationSidebarProps> = async () => {
         ))}
       </ScrollArea>
       <div className="pb-3 mt-auto flex items-center flex-col gap-y-4">
-        <NavigationHome />
-        <ModeToggle />
+        <div className="invisible md:visible">
         <UserButton
           afterSignOutUrl="/channel"
           appearance={{
             elements: {
-              avatarBox: "h-[48px] w-[48px]",
+              avatarBox: "z-100 h-[48px] w-[48px]",
             },
           }}
         />
+         </div>
+        <NavigationHome />
+        <ModeToggle />
       </div>
     </div>
   );

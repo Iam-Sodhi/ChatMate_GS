@@ -26,24 +26,24 @@ const Navbar: React.FC<NavbarProps> = ({ ContactPage, channelPage }) => {
         <div className=" flex justify-between items-center container ">
           <a href="/">
             <div className="flex justify-center items-center leading-[117.02%] cursor-pointer font-poppins">
-              <b className="text-[25px]">
+              <b className="text-[21px] sm:text-[25px]">
                 Cha
-                <span className=" text-[25px] tracking-[0.06em]">t</span>
+                <span className="text-[21px] sm:text-[25px] tracking-[0.06em]">t</span>
               </b>
-              <span className="font-extralight text-[25px]">Mate</span>
+              <span className="font-extralight text-[21px] sm:text-[25px]">Mate</span>
             </div>
           </a>
 
           {!channelPage && (
             <nav className="flex">
-              <ul className="flex justify-evenly items-center font-light  text-[1rem] font-roboto gap-x-5">
+              <ul className="flex justify-evenly items-center font-light  text-[1rem] font-roboto gap-x-2 sm:gap-x-5">
                 {!ContactPage && (
-                  <li className=" hidden sm:flex items-center justify-center cursor-pointer hover:font-semibold hover:text-secondary1">
+                  <li className="sm:flex items-center  text-[14px] sm:text-lg justify-center cursor-pointer hover:font-semibold hover:text-secondary1">
                     <Link href="/contact">Contact Us </Link>{" "}
                   </li>
                 )}
                 {!ContactPage && (
-                  <li className="hidden sm:flex bg-secondary1 h-10 w-[1.5px] mr-4 "></li>
+                  <li className=" sm:flex bg-secondary1 h-8 sm:h-10 w-[1px] sm:w-[1.5px] mr-2 sm:mr-4 "></li>
                 )}
                 {}
               </ul>

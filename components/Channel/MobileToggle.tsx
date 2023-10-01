@@ -25,7 +25,10 @@ export const MobileToggle = ({
         <div className="w-[72px]">
           <NavigationSidebar />
         </div>
+        <div className="text-black dark:text-white w-full ">
+
         <ServerSidebar serverId={serverId} />
+        </div>
       </SheetContent>
     </Sheet>
   )
