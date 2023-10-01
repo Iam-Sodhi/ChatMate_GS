@@ -2,6 +2,7 @@
 import React, { createContext, useState, useRef, useEffect, useContext } from 'react';
 import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
+import { useRouter } from 'next/navigation';
 interface SocketContextType {
     call: any; // Replace 'any' with the appropriate type for 'call'
     callAccepted: boolean;
@@ -18,6 +19,7 @@ interface SocketContextType {
     answerCall: () => void;
   }
 
+  
 const SocketContext = createContext<SocketContextType | null>(null);
 const constraints={
     video:{
@@ -50,6 +52,7 @@ const ContextProvider = ({
   const userVideo = useRef<HTMLVideoElement | null>(null);
   const connectionRef = useRef<Peer.Instance | null>(null);
  
+  const router =useRouter();
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
@@ -111,8 +114,8 @@ const ContextProvider = ({
     if (connectionRef.current)
     connectionRef.current.destroy();
 
-
-    window.location.reload();
+   router.push("/");
+    //window.location.reload();
   };
 
   return (
