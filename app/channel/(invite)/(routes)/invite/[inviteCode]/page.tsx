@@ -1,7 +1,7 @@
 import { currentProfile } from "@/lib/serverRelated/currentProfile";
 import { db } from "@/lib/serverRelated/db";
-import { redirectToSignIn } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
 interface InviteCodePageProps{
     params:{
@@ -11,10 +11,12 @@ interface InviteCodePageProps{
 export default async function InviteCodePage(
     {params}:InviteCodePageProps
 )  {
+  // const toastMessage=()=>{
+  //   toast.error("Firstly sign-in. Only then use this invite url.");
+  // }
     const profile = await currentProfile();
-  
     if (!profile) {
-      return redirectToSignIn();
+      redirect("/channel");
     }
   
     if (!params.inviteCode) {
