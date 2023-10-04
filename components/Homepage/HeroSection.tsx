@@ -19,7 +19,7 @@ const HeroSection: React.FC<HeroSectionProps> = () => {
     <section className="section block  bg-peachpuff  sm:pt-[18vh]  lg:min-h-screen text-left text-[1.13rem] text-white font-roboto">
       <div className="container block mx-auto max-w-[1160px]">
         <div className="flexbox  flex flex-col  items-start sm:flex-row sm:justify-center justify-between sm:items-center">
-          <div className="left-block mb-5 sm:mb-0   sm:mr-[15px] md:mr-[60px] md:min-w-[340px] sm:min-w-[280px] sm:max-w-[345px] lg:max-w-[500px] sm:min-h-[341.5px]   ">
+          <div className="left-block mb-5 sm:mb-0   sm:mr-[15px] md:mr-[60px] md:min-w-[340px] sm:min-w-[292px] sm:max-w-[345px] lg:max-w-[500px] sm:min-h-[341.5px]   ">
            <motion.p className="sd:mb-7 mb-5 text-[35px] sm:text-[37px] lg:text-[65px] md:text-[45px] leading-[112.52%] font-semibold font-poppins text-secondary1 block min-h-[78px] sm:min-h-[83px] md:min-h-[101px] lg:min-h-[146px] "  initial={{opacity:0}}
            animate={{opacity:1}}
            transition={{delay:0.15, duration:1}}><motion.span
