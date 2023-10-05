@@ -5,6 +5,7 @@ import axios from "axios";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -60,6 +61,9 @@ export const InviteModal = () => {
             <DialogTitle className="text-2xl text-center font-bold">
               Invite Friends
             </DialogTitle>
+            <DialogDescription>
+            Please make sure the other user is already signed in. Otherwise he would not become member of the server.
+          </DialogDescription>
           </DialogHeader>
           <div className="p-6">
             <Label

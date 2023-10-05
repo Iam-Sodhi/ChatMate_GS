@@ -20,7 +20,7 @@ export const ChatHeader = ({
   imageUrl
 }: ChatHeaderProps) => {
   return (
-    <div className="text-md fixed w-full md:w-[65%] lg:w-[85%]   font-semibold px-3 bg-secondary1 text-white z-10 flex items-center h-16 border-neutral-200 dark:border-neutral-800 border-b-2">
+    <div className="text-md fixed w-full md:w-[65%] lg:w-[85%]   font-semibold px-3 bg-secondary1 text-white z-10 flex items-center h-[72px] border-neutral-200 dark:border-neutral-800 border-b-2">
       <MobileToggle serverId={serverId} />
       {type === "channel" && (
         <Hash className="w-5 h-5 text-white mr-2" />

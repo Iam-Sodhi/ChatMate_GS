@@ -35,8 +35,8 @@ const BusinessSection: React.FC<BusinessSectionProps> = () => {
               }}
               viewport={{once: true}}>
 
-            <h1 className="mt-5 mb-3 text-[27px] sm:text-[33px]  lg:text-[45px] leading-[120%] font-poppins text-black ">Perfect Solution for Small Businesses</h1>
-            <p className="mb-4 text-[13px] md:text-[15px]  lg:text-[18px] text-gray-200  font-poppins"> Pricing plans that fit like a glove.</p>
+            <h1 className="mt-5 mb-3 text-[27px] sm:text-[33px]  lg:text-[45px] leading-[120%] font-poppins text-black ">Perfect Solution for Seamless Conversation</h1>
+            <p className="mb-4 text-[13px] md:text-[15px]  lg:text-[18px] text-gray-200  font-poppins">Connect with anyone, anywhere, anytime..</p>
             <button  onClick={()=>router.push("/channel")}  className="md:inline-block block text-white font-medium   font-roboto
             text-[12px] mr-0 object-fill sm:text-[18px] hover:bg-secondary1   border-solid border-white text-center align-middle bg-secondary3 box-border  py-[11px]  px-[26px] sm:px-[14px]  sm:py-[15px] rounded-sm sm:mr-[20px] max-w-[200px] sm:max-w-none border-[1.5px] leading-[117.02%] ">
                 Start Text Chat
@@ -57,7 +57,7 @@ const BusinessSection: React.FC<BusinessSectionProps> = () => {
              viewport={{once:true}}>
 
             <Image alt="star image" src="/star.svg"  height={19} width={114} quality={50} className="mr-12 " />
-            <p className="mt-[6px] sm:-mt-[7px] text-[13px] md:text-[18px] sm:text-[14px] text-gray-200 leading-[181%] font-poppins "><span className="font-bold" >3 million calls </span>completed with a 96.8% 5 star rating.</p>
+            <p className="mt-[6px] sm:-mt-[7px] text-[13px] md:text-[18px] sm:text-[14px] text-gray-200 leading-[181%] font-poppins ">Connecting You Through  <span className="font-bold" >Words </span>and <span className="font-bold" >Faces.</span></p>
             </motion.div>
           </div>
         </div>

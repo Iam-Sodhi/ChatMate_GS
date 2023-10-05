@@ -39,7 +39,7 @@ const About: React.FC<AboutProps> = () => {
           }}
            >
 
-           <Image alt="about Image" src="/aboutImage.jpg" className="inline-block max-w-[200%] mb-[10px] sm:mb-0 sm:max-w-full" width={2098} height={1398}  quality={80}/>
+           <Image alt="about Image" src="/about_Image.jpg" className="inline-block max-w-[200%] mb-[10px] sm:mb-0 sm:max-w-full" width={2098} height={1398}  quality={80}/>
            </motion.div>
       </div>
     </motion.section>
