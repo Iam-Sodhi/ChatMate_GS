@@ -26,7 +26,7 @@ const ServerHeader:React.FC<ServerHeaderProps> = ({
           asChild
         >
           <button
-            className="w-full text-lg font-semibold px-3 flex items-center h-16 border-neutral-200 dark:border-neutral-800 border-b-2 bg-secondary3 dark:bg-secondary3 text-white  transition"
+            className="w-full text-lg font-semibold px-3 flex items-center h-[72px] border-neutral-200 dark:border-neutral-800 border-b-2 bg-secondary3 dark:bg-secondary3 text-white  transition"
           >
             {server.name}
             <ChevronDown className="h-6 w-6 ml-2  text-lg font-extrabold  hover:translate-y-[2px]" />
@@ -38,7 +38,7 @@ const ServerHeader:React.FC<ServerHeaderProps> = ({
           {isModerator && (
             <DropdownMenuItem
               onClick={() => onOpen("invite", { server })}
-              className="text-secondary3 dark:text-secondary3 px-3 py-2 text-sm cursor-pointer"
+              className="text-secondary3 dark:text-secondary3 hover:text-secondary3/90 px-3 py-2 text-sm cursor-pointer"
             >
               Invite People
               <UserPlus className="h-4 w-4 ml-auto" />
