@@ -31,7 +31,13 @@ Light mode also present.
 <img width="1120" alt="Screenshot 2023-10-06 061358" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/279e3040-1c11-495c-af92-87498d04e70d">
 
 
-
-
-
 <img width="1120" alt="Screenshot 2023-10-06 062142" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/0b095a8c-2737-4410-9c3e-3089dbbe8c76">
+
+### The email that I receive when someone contact me form the **'Contact Us'** page:
+  
+
+<img width="1120" alt="Screenshot 2023-10-06 213852" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/318b457b-0b24-4b92-a030-40f5889b3fc2">
+
+
+
+
