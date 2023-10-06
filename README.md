@@ -20,12 +20,17 @@ Light mode also present.
 
 
 
+
 <img width="921" alt="Screenshot 2023-10-05 050315" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/42e34f07-8d6e-40ef-8b9c-85f3f1974a23">
 
 
 
 
+
+
 <img width="1120" alt="Screenshot 2023-10-06 061358" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/279e3040-1c11-495c-af92-87498d04e70d">
+
+
 
 
 
