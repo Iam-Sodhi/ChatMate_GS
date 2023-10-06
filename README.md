@@ -29,9 +29,20 @@ Light mode also present.
 
 
 <img width="1120" alt="Screenshot 2023-10-06 061358" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/279e3040-1c11-495c-af92-87498d04e70d">
+<img width="1120" alt="Screenshot 2023-10-06 232428" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/5572dd1c-c7a0-4ccb-81fa-f7698bf0b0b8">
 
+
+
+<img width="1120" alt="Screenshot 2023-10-06 232454" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/9343eec8-0657-4a8c-8a07-1379c39a93ad">
+
+
+
+<img width="1120" alt="Screenshot 2023-10-06 232534" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/b1ab4c05-26d6-45b8-b938-e7ea93cbd4a7">
 
 <img width="1120" alt="Screenshot 2023-10-06 062142" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/0b095a8c-2737-4410-9c3e-3089dbbe8c76">
+
+<img width="1108" alt="Screenshot 2023-10-06 232320" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/53274b79-265a-499f-9993-8058bcb2571e">
+
 
 ### The email that I receive when someone contact me form the **'Contact Us'** page:
   (**DISCLAIMER**: This is the fun email sent from one of my cousin.)
