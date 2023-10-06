@@ -5,7 +5,7 @@ https://chatmate-gsodhi.vercel.app/
 This is a realtime chat application (mobile responsive) with features of one-to-one video callings and other features of making servers , channels and personal chat with others like discord. The feature of dark and
 Light mode also present. 
 ## TechStack used: 
-**Next.js** , Prisma, **Typescript**, **Socket.io**,  Tailwind CSS, Framer Motion, Upload Thing, **PlanetScale MySql database** , Resend Email etc.
+**Next.js** , Prisma, **Typescript**, **Socket.io**,  Tailwind CSS, Framer Motion, Upload Thing, **PlanetScale MySQL database** , Resend Email, Clerk etc.
 
 
 
