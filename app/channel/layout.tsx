@@ -11,7 +11,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <div  >
           <ThemeContextProvider>  
           <SocketProvider >
           <ModalProvider />
@@ -22,6 +21,5 @@ export default function RootLayout({
              
           </SocketProvider>
           </ThemeContextProvider>
-      </div>
   );
 }
