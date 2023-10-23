@@ -1,12 +1,12 @@
+
 import About from "@/components/Homepage/About";
 import BusinessSection from "@/components/Homepage/BusinessSection";
 import Footer from "@/components/Homepage/Footer";
 import HeroSection from "@/components/Homepage/HeroSection";
 import { UserButton, useUser } from "@clerk/nextjs";
-import { useEffect } from "react";
 
 export default  function Home() {
-
+ 
   return (
     <main>
       <div className="relative  w-full  overflow-hidden   ">

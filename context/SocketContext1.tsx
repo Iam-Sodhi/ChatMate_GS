@@ -32,7 +32,6 @@ const constraints={
     },
     audio:true
    }
-//const socket = io('https://warm-wildwood-81069.herokuapp.com');
 const socket = io('https://chatmate-oszk.onrender.com');
 
 const ContextProvider = ({

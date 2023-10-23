@@ -20,13 +20,12 @@ export default function RootLayout({
       <body className={cn(
         "bg-white dark:bg-[#313338]"
       )}>
-    
-       <ContextProvider>  
-        {children}
-      
-        <Toaster position="top-right" />
+        {/* <ContextProvider> */}
 
-      </ContextProvider >  
+        {children}
+        <Toaster position="top-right" />
+        {/* </ContextProvider> */}
+
       </body>
     </html>
        </ClerkProvider>

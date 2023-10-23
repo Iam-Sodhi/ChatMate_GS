@@ -35,7 +35,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "context/SocketProvider-context.tssx"
-  ],
+, "components/tut.js"  ],
   "exclude": [
     "node_modules"
   ]
