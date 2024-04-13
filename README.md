@@ -38,6 +38,10 @@ Light mode also present.
 
 
 <img width="1120" alt="Screenshot 2023-10-06 232534" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/b1ab4c05-26d6-45b8-b938-e7ea93cbd4a7">
+### You can either video call directly from home page or from 'Start Text' by clicking on video:
+
+  
+![Screenshot 2024-04-13 215535](https://github.com/Iam-Sodhi/ChatMate_GS/assets/129111379/aaa181d9-fe5c-4f3e-be9b-1fe209e27c4a)
 
 <img width="1120" alt="Screenshot 2023-10-06 062142" src="https://github.com/Iam-Sodhi/ChatMate_Frontend/assets/129111379/0b095a8c-2737-4410-9c3e-3089dbbe8c76">
 
